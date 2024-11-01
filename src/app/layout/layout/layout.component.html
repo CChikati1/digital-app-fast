@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div style="height: calc(89vh);">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-auto bg-light sticky-top menuBackground">
+                <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+                    <ul
+                        class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center menuBackground">
+                        <li class="nav-item">
+                            <a [routerLink]="['app/home']" routerLinkActive="active-link" class="nav-link py-2 px-2 goldColor" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="right" data-bs-original-title="Home">
+                                <i class="bi-house fs-2"></i>
+                                <br />Home
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="isSuperuser">
+                            <a [routerLink]="['app/data']" routerLinkActive="active-link"  class="nav-link py-3 px-2 goldColor" title=""
+                                data-bs-toggle="tooltip" data-bs-placement="right"
+                                data-bs-original-title="Financial Data">
+                                <i class="bi-card-list fs-2"></i>
+                                <br /> Add New Data
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['app/notification']" routerLinkActive="active-link"  class="nav-link py-3 px-2 goldColor" title=""
+                                data-bs-toggle="tooltip" data-bs-placement="right"
+                                data-bs-original-title="Notification">
+                                <i class="bi-envelope fs-2"></i>
+                                <br />Notification
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="isSuperuser">
+                            <a [routerLink]="['app/users']" routerLinkActive="active-link"  class="nav-link py-3 px-2 goldColor" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="right" data-bs-original-title="User Management">
+                                <i class="bi-people fs-2"></i>
+                                <br />User <br /> Management
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="isSuperuser">
+                            <a [routerLink]="['app/settings']" routerLinkActive="active-link"  class="nav-link py-3 px-2 goldColor" title=""
+                                data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Settings">
+                                <i class="bi-gear fs-2"></i>
+                                <br />Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['app/issue']" routerLinkActive="active-link"  class="nav-link py-3 px-2 goldColor" title=""
+                                data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Settings">
+                                <i class="bi-gear fs-2"></i>
+                                <br />Raise an Issue
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm p-3 min-vh-100 bg-color" >
+                <!-- content -->
+                <!--div [@routeAnimations]="prepareRoute(outlet)"-->
+                    <router-outlet #outlet="outlet"></router-outlet>
+                <br /><br />
+                <!--/div-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div style="height: calc(3vh);">  
+    <app-footer></app-footer>
+</div> -->

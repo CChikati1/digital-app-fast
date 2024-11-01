@@ -1,0 +1,405 @@
+<div class="bg-form">  
+  <div class="app-page-title">
+    <div class="page-title-wrapper">
+    <div class="page-title-heading">
+    <div class="page-title-icon">
+    </div>
+    <div>New FS Request</div>
+    </div>
+    <div class="page-title-actions">
+      <button type="button" class="btn-shadow btn btn-info" (click)="goBack()">
+        Back
+      </button>
+    </div>
+    </div> </div>
+    
+          <form [formGroup]="angForm">
+            <div class="card card-shadow">
+              <div class="card-body">
+                      <div class="row">
+
+                            <div class="col-sm-12 col-lg-3 col-lg-3">
+                                <div class="form-group">
+                                  <label style="width:100%" class="control-label">Category<span style="color: red;"> *</span></label>
+                                  <select class="custom-select" formControlName="Category">
+                                      <option value="" disabled>Select Category</option>
+                                      <option *ngFor="let item of Category" value={{item.Options}}>{{ item.Options }}</option>
+                                   </select>
+                                </div>
+
+                                <div *ngIf="submitted && f['Category'].errors" class="alert-message">
+                                  Please select Category
+                                </div>
+                              </div>
+                              <div class="col-sm-12 col-lg-3 col-lg-3">
+                                <div class="form-group">
+                                  <label style="width:100%" class="control-label">Entitity Code<span style="color: red;"> *</span></label>
+                                   <input type="text" class="form-control" formControlName="EntitityCode" (change)="validateencode()">
+                                   
+                                </div>
+                                <div *ngIf="submitted && f['EntitityCode'].errors" class="alert-message">
+                                  <div>Please enter entity code</div>
+                                </div>
+                                
+                              </div>
+                              <div class="col-sm-12 col-lg-3 col-lg-3">
+                                <div class="form-group">
+                                  <label style="width:100%" class="control-label">Entitity Name<span style="color: red;"> *</span></label>
+                                   <input type="text" class="form-control" formControlName="Entities">
+                                </div>
+                                <div *ngIf="submitted && f['Entities'].errors" class="alert-message">
+                                  <div>Please enter entities</div>
+                                </div>
+                              </div>
+
+                              <div class="col-sm-12 col-lg-3 col-lg-3">
+                                <div class="form-group">
+                                  <label style="width:100%" class="control-label">Basis of FS preparation<span style="color: red;"> *</span></label>
+                                  <select class="custom-select" formControlName="ConsolidatedStandalone">
+                                      <option value="" disabled>Select Basis of FS preparation</option>
+                                      <option *ngFor="let item of ConsolidatedStandalone" value={{item.Options}}>{{ item.Options }}</option>
+                                  </select>
+                                </div>
+                                <div *ngIf="submitted && f['ConsolidatedStandalone'].errors" class="alert-message">
+                                  Please select Basis of FS preparation
+                                </div>
+                              </div>
+
+                      </div>
+
+                      <div class="row">
+
+                        <div class="col-sm-12 col-lg-3 col-lg-3">
+                          <div class="form-group">
+                            <label style="width:100%" class="control-label">Operational/ Dormant<span style="color: red;"> *</span></label>
+                            <select class="custom-select" formControlName="DormantOperational">
+                                <option value="" disabled>Select Operational/ Dormant</option>
+                                <option *ngFor="let item of DormantOperational" value={{item.Options}}>{{ item.Options }}</option>
+                             </select>
+                          </div>
+                          <div *ngIf="submitted && f['DormantOperational'].errors" class="alert-message">
+                            Please select Operational/ Dormant
+                          </div>
+                        </div>
+                              <div class="col-sm-12 col-lg-3 col-lg-3">
+                                  <div class="form-group">
+                                    <label style="width:100%" class="control-label">Business Unit<span style="color: red;"> *</span></label>
+                                    <select class="custom-select" formControlName="BusinessUnit">
+                                        <option value="" disabled>Select businessunit</option>
+                                        <option *ngFor="let item of BusinessUnit" value={{item.Options}}>{{ item.Options }}</option>
+                                    </select>
+                                  </div>
+                                  <div *ngIf="submitted && f['BusinessUnit'].errors" class="alert-message">
+                                    Please select BusinessUnit
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-lg-3 col-lg-3">
+                                  <div class="form-group">
+                                    <label style="width:100%" class="control-label">Country<span style="color: red;"> *</span></label>
+                                    <select class="custom-select" formControlName="Country">
+                                        <option value="" disabled>Select country</option>
+                                        <option *ngFor="let item of Country" value={{item.Options}}>{{ item.Options }}</option>
+                                    </select>
+                                  </div>
+                                  <div *ngIf="submitted && f['Country'].errors" class="alert-message">
+                                    Please select Country
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-lg-3 col-lg-3">
+                                  <div class="form-group">
+                                    <label style="width:100%" class="control-label">Preparer<span style="color: red;"> *</span></label>
+                                    <ng-select2 formControlName="Preparer" [data]="Users">
+                                    </ng-select2>
+                                  </div> 
+                                  <div *ngIf="submitted && f['Preparer'].errors" class="alert-message">
+                                    Please select Preparer
+                                  </div>                 
+                                </div>
+              
+                               
+                      </div>
+          
+                      <div class="row">
+                        <div class="col-sm-12 col-lg-3 col-lg-3">
+                          <div class="form-group">
+                            <label style="width:100%" class="control-label">Reviewer<span style="color: red;"> *</span></label>
+                            <ng-select2 formControlName="Reviewer" [data]="Users">
+                            </ng-select2>
+                          </div>
+                          <div *ngIf="submitted && f['Reviewer'].errors" class="alert-message">
+                            Please select Reviewer
+                          </div>
+                        </div>
+                              <div class="col-sm-12 col-lg-3 col-lg-3">
+                                  <div class="form-group">
+                                    <label style="width:100%" class="control-label">Target FS completion (Audit Report release) date<span style="color: red;"> *</span></label>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                            ngbDatepicker #ds1td="ngbDatepicker" formControlName="TargetFSCompletionDate" [readonly]="true">
+                                            <div class="input-group-append">
+                                              <button class="btn btn-outline-secondary calendar bi-calendar" (click)="ds1td.toggle()"
+                                                type="button"></button>
+                                            </div>
+                                          </div>
+                                      <div *ngIf="submitted && f['TargetFSCompletionDate'].errors" class="alert-message">
+                                        <div>Please select Target FS completion</div>
+                                      </div>
+                                    
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-lg-3 col-lg-3">
+                                  <div class="form-group">
+                                <label style="width:100%" class="control-label">Stage 1 Deadline<span style="color: red;"> *</span></label>
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                      ngbDatepicker #ds1dl="ngbDatepicker" formControlName="Stage1Deadline" [readonly]="true">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary bi-calendar" (click)="ds1dl.toggle()"
+                                        type="button"></button>
+                                    </div>
+                                  </div>
+                                  <div *ngIf="submitted && f['Stage1Deadline'].errors" class="alert-message">
+                                    <div>Please select stage 1 deadline</div>
+                                  </div>
+                                
+                              </div>
+                                </div>
+                                <div class="col-sm-12 col-lg-3 col-lg-3">
+                                  <div class="form-group">
+                                    <label style="width:100%" class="control-label">Stage 2.1 Deadline<span style="color: red;"> *</span></label>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                          ngbDatepicker #ds2dl="ngbDatepicker" formControlName="Stage2Deadline" [readonly]="true">
+                                        <div class="input-group-append">
+                                          <button class="btn btn-outline-secondary calendar bi-calendar" (click)="ds2dl.toggle()"
+                                            type="button"></button>
+                                        </div>
+                                      </div>
+                                    <div *ngIf="submitted && f['Stage2Deadline'].errors" class="alert-message">
+                                      <div>Please select stage 2.1 deadline</div>
+                                    </div>
+                                  
+                                  </div>
+                                </div>
+                                
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-12 col-lg-3 col-lg-3">
+                          <div class="form-group">
+                            <label style="width:100%" class="control-label">Stage 2.2 Deadline<span style="color: red;"> *</span></label>
+                            <div class="input-group">
+                                <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                  ngbDatepicker #ds21dl="ngbDatepicker" formControlName="Stage21Deadline" [readonly]="true">
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary calendar bi-calendar" (click)="ds21dl.toggle()"
+                                    type="button"></button>
+                                </div>
+                              </div>
+                            <div *ngIf="submitted && f['Stage21Deadline'].errors" class="alert-message">
+                              <div>Please select stage 2.2 deadline</div>
+                            </div>
+                          
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-3 col-lg-3">
+                          <div class="form-group">
+                            <label style="width:100%" class="control-label">Stage 3.1 Deadline<span style="color: red;"> *</span></label>
+                            <div class="input-group">
+                                <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                    ngbDatepicker #ds31td="ngbDatepicker" formControlName="Stage31Deadline" [readonly]="true">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary calendar bi-calendar" (click)="ds31td.toggle()"
+                                        type="button"></button>
+                                    </div>
+                                  </div>
+                                    <div *ngIf="submitted && f['Stage31Deadline'].errors" class="alert-message">
+                                      <div>Please select stage 3.1 deadline</div>
+                                    </div>
+                             
+                              
+                          </div>
+                        </div>
+                          <div class="col-sm-12 col-lg-3 col-lg-3">
+                            <div class="form-group">
+                          <label style="width:100%" class="control-label">Stage 3.2 Deadline<span style="color: red;"> *</span></label>
+                          <div class="input-group">
+                              <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                ngbDatepicker #ds32dl="ngbDatepicker" formControlName="Stage32Deadline" [readonly]="true">
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-secondary bi-calendar" (click)="ds32dl.toggle()"
+                                  type="button"></button>
+                              </div>
+                            </div>
+                          <div *ngIf="submitted && f['Stage32Deadline'].errors" class="alert-message">
+                            <div>Please select stage 3.2 deadline</div>
+                          </div>
+                        
+                        </div>
+                          </div>
+                          <div class="col-sm-12 col-lg-3 col-lg-3">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Stage 3.3 Deadline<span style="color: red;"> *</span></label>
+                              <div class="input-group">
+                                  <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                    ngbDatepicker #ds33dl="ngbDatepicker" formControlName="Stage33Deadline" [readonly]="true">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar bi-calendar" (click)="ds33dl.toggle()"
+                                      type="button"></button>
+                                  </div>
+                                </div>
+                              <div *ngIf="submitted && f['Stage33Deadline'].errors" class="alert-message">
+                                <div>Please select stage 3.3 deadline</div>
+                              </div>
+                            </div>
+                            
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-12 col-lg-3 col-lg-3">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Stage 4.1 Deadline<span style="color: red;"> *</span></label>
+                              <div class="input-group">
+                                  <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                      ngbDatepicker #ds4td="ngbDatepicker" formControlName="Stage4Deadline" [readonly]="true">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar bi-calendar" (click)="ds4td.toggle()"
+                                          type="button"></button>
+                                      </div>
+                              </div>
+                              <div *ngIf="submitted && f['Stage4Deadline'].errors" class="alert-message">
+                                <div>Please select stage 4.1 deadline</div>
+                              </div>
+                            
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-lg-3 col-lg-3">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Stage 4.2 Deadline<span style="color: red;"> *</span></label>
+                              <div class="input-group">
+                                  <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                      ngbDatepicker #ds42td="ngbDatepicker" formControlName="Stage42Deadline" [readonly]="true">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar bi-calendar" (click)="ds42td.toggle()"
+                                          type="button"></button>
+                                      </div>
+                              </div>
+                              <div *ngIf="submitted && f['Stage42Deadline'].errors" class="alert-message">
+                                <div>Please select stage 4.2 deadline</div>
+                              </div>
+                            
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-lg-3 col-lg-3">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Stage 4.3 Deadline<span style="color: red;"> *</span></label>
+                              <div class="input-group">
+                                  <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                      ngbDatepicker #ds43td="ngbDatepicker" formControlName="Stage43Deadline" [readonly]="true">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar bi-calendar" (click)="ds43td.toggle()"
+                                          type="button"></button>
+                                      </div>
+                              </div>
+                              <div *ngIf="submitted && f['Stage43Deadline'].errors" class="alert-message">
+                                <div>Please select stage 4.3 deadline</div>
+                              </div>
+                            
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-lg-3 col-lg-3">
+                            <div class="form-group">
+                          <label style="width:100%" class="control-label">Stage 5 Deadline<span style="color: red;"> *</span></label>
+                          <div class="input-group">
+                              <input class="form-control" placeholder="dd-mm-yyyy" name="dp4"
+                                ngbDatepicker #ds5dl="ngbDatepicker" formControlName="Stage5Deadline" [readonly]="true">
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-secondary bi-calendar" (click)="ds5dl.toggle()"
+                                  type="button"></button>
+                              </div>
+                            </div>
+                            <div *ngIf="submitted && f['Stage5Deadline'].errors" class="alert-message">
+                              <div>Please select stage 5 deadline</div>
+                            </div>
+                          
+                        </div>
+                          </div>   
+                           
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                          <div class="form-group">
+                            <label style="width:100%" class="control-label">Comments</label>
+                            <div class="input-group">
+                              <textarea class="form-control" formControlName="Stg1Comments" name="textarea-input" 
+                              rows="2"></textarea>
+                              </div>
+                          </div>
+  
+                          
+                        </div>
+                      </div>
+
+                      <!-- <div class="row">   
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Upload Files</label>
+                              <div class="dropzone" fileDragDrop (filesChangeEmiter)="onFileChange($event)">
+                                <div class="text-wrapper">
+                                  <div class="centered">
+                                    <input type="file" name="file" id="file" (change)="onFileChange($any($event.target).files)" multiple>
+                                    
+                                    <label for="file"><span  class="btn primaryColor2 button-style">Select your file</span> <br/> Drag & Drop it here!</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>                         
+                        </div>
+                      </div> -->
+
+                      <!-- <div class="row" *ngIf="fileInformationData.length != 0">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                              <table class="table table-nowrap mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                      <th scope="col">File Name</th> 
+                                      <th scope="col">Upload Date</th>                                                       
+                                      <th scope="col">Updated By</th>
+                                      <th scope="col" style="width: 10%;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let file of fileInformationData; let ind = index">                                                       
+                                        <td><div class="ms-3 flex-grow-1">
+                                          <h6 class="fs-15 mb-0"><a href={{file.File.ServerRelativeUrl}}>{{file.Title}}</a>
+                                          </h6>
+                                      </div></td>
+                                        <td>{{file.Modified | date: 'dd-MM-yyyy'}}</td>
+                                        <td>{{file.Editor.Title}}</td>
+                                        <td>
+                                          <span class="span-anchor" (click)="downloadFile(file, 'MAFP Data Submission')"><i class="bi bi-download text-muted me-2"></i></span>
+                                          <span class="span-anchor" (click)="deleteFile(file)"><i class="bi bi-trash text-muted me-2"></i></span>
+                                        </td>
+                                    </tr>                                      
+                                </tbody>
+                              </table>
+                            </div>
+                           
+                        </div>
+                      </div> -->
+                      
+                      <div class="row" style="margin-top: 20px;">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;"> 
+                            <button type="submit" class="btn btn-submit" (click)="saveUpdateRequest('Submitted','MAFP Data Submission')">
+                                Save
+                            </button>
+                           
+                        </div>
+                      </div>
+
+          </div>
+          </div>
+          <br/>                              
+          </form>
+</div>

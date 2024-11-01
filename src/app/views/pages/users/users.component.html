@@ -1,0 +1,184 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card card-shadow" style="border-top: 2px solid #F89715;">
+           <div class="card-header">
+            <h5>User Roles and Responsibility</h5>
+                <div class="card-header-right ">
+                    <i class="bi bi-three-dots"></i>
+                </div>
+           </div>
+           <div class="card-body p-0">                             
+                <iframe src="https://majidalfuttaim.sharepoint.com/sites/fasttest/Lists/UserRoles/AllItems.aspx" width="100%" height="800"></iframe>
+           </div>
+           <!-- <div class="card-body p-3" *ngIf="!isSuperuser">                             
+            <div>Access Denied!!</div>
+       </div> -->
+        </div>          
+    </div>
+</div>
+
+<!-- 
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">         
+        <div style="float: right;text-align: right;">           
+            <button type="button" class="btn btn-outline-dark" (click)="OpenPopUp(content2)">
+                Add Request
+              </button>
+        </div>
+
+      </div>
+        <div class="card-body tblHtscroll">
+            <div class="row">                      
+                <div class="col-sm-6 col-md-6" style="padding-bottom: 15px;">
+                    <label style="width:100%" class="control-label">Search by keyword</label>
+                    <input class="form-control" >              
+                </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                <iframe [src]="safeSrc" width="100%" height="600"></iframe>
+              </div>
+          </div>
+          <div class="row" style="width: 100% !important;">
+              <div class="col-md-12" style="padding-right: 0px !important;">
+
+                
+                <div class="maxwidth" style="min-height:500px;max-height:700px; width:100%;">  
+                 <table id="tblTempData2" class="table table-bordered table-responsive-sm display"
+                                      style="font-size: 14px;">
+                                      <thead class="thead-light" style="background-color: #8a1538 !important;">
+                                          <tr>
+                                              <th class="tableheader">Control/performance improvement observation input by KPMG</th>   
+                                              <th class="tableheader">Business unit</th>   
+                                              <th class="tableheader">Risk</th>   
+                                              <th class="tableheader">Status</th>   
+                                              <th class="tableheader">Process Owner</th>
+                                              <th class="tableheader">Responsibility</th>   
+                                              <th class="tableheader"></th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr style="cursor: pointer;"
+                                              *ngFor="let item of tableData">
+                                              <td>{{item.Control_x0020__x002f__x0020_perf}}</td>
+                                              <td>{{item.Business_x0020_unit_x0020__x0028}}</td>
+                                              <td>{{item.Risk}}</td>
+                                              <td>{{item.Status}}</td>
+                                              <td>{{item.Process_x0020_owner}}</td>
+                                              <td>{{item.Responsibility}}</td>
+                                              <td style="width: 75px;">
+                                                  <a class="dt-buttons" (click)="editAuditRequest(item, content2)">                                                 
+                                                    <div class="dt-button buttons-html5 dt-button-transparent btn btn-outline-dark">Edit</div>                                                
+                                                </a>
+                                              </td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+  
+  
+                </div>
+              </div>
+            </div>
+  
+          
+          </div>
+  
+      
+      </div>
+    </div> -->
+  
+
+  
+<!--  
+  <ng-template #content2 let-c="close" let-d="dismiss">
+  <form [formGroup]="angForm">
+    
+    <div class="modal-header" id="kt_modal_add_user_header">
+        <h2 class="fw-bolder" style="font-size: 1.5rem;">Add User</h2>       
+        <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+  
+        <div class="fv-row mb-7 fv-plugins-icon-container">                
+                <label class="required fw-bold fs-6 mb-2">User</label>               
+                <ng-select2 formControlName="User" [data]="Users">
+                </ng-select2>
+                <div *ngIf="submitted && f['User'].errors" class="alert-message">
+                    Please select User
+                  </div>  
+        <div class="fv-plugins-message-container invalid-feedback"></div></div>
+        <div class="mb-7">
+            <label class="required fw-bold fs-6 mb-5">Role</label>           
+            <div class="d-flex fv-row">
+                <div class="form-check form-check-custom form-check-solid">
+                    <input class="form-check-input me-3" formControlName="Role" type="radio" value="Superuser" id="kt_modal_update_role_option_0" 
+                    checked="checked">
+                    <label class="form-check-label" for="kt_modal_update_role_option_0">
+                        <div class="fw-bolder text-gray-800">Superuser</div>
+                        <div class="text-gray-600">Corporate reporting team</div>
+                    </label>
+                </div>
+            </div>
+            <div class="separator separator-dashed my-5"></div>
+            <div class="d-flex fv-row">
+                <div class="form-check form-check-custom form-check-solid">
+                    <input class="form-check-input me-3"formControlName="Role" type="radio" value="GS team" id="kt_modal_update_role_option_1">                    
+                    <label class="form-check-label" for="kt_modal_update_role_option_1">
+                        <div class="fw-bolder text-gray-800">GS team</div>
+                        <div class="text-gray-600"> FS preparation</div>
+                    </label>
+                </div>
+            </div>
+            <div class="separator separator-dashed my-5"></div>
+            <div class="d-flex fv-row">
+                <div class="form-check form-check-custom form-check-solid">
+                    <input class="form-check-input me-3" formControlName="Role" type="radio" value="EY" id="kt_modal_update_role_option_2">                    
+                    <label class="form-check-label" for="kt_modal_update_role_option_2">
+                        <div class="fw-bolder text-gray-800">EY</div>
+                        <div class="text-gray-600"> EY FS submission</div>
+                    </label>
+                </div>
+            </div>
+            <div class="separator separator-dashed my-5"></div>
+            <div class="d-flex fv-row">
+                <div class="form-check form-check-custom form-check-solid">
+                    <input class="form-check-input me-3" formControlName="Role" type="radio" value="KPMG" id="kt_modal_update_role_option_3">                    
+                    <label class="form-check-label" for="kt_modal_update_role_option_3">
+                        <div class="fw-bolder text-gray-800">KPMG</div>
+                        <div class="text-gray-600"> Audit Reviews and clearance</div>
+                    </label>
+                </div>
+            </div>
+            <div class="separator separator-dashed my-5"></div>
+            <div class="d-flex fv-row">
+                <div class="form-check form-check-custom form-check-solid">
+                    <input class="form-check-input me-3" formControlName="Role" type="radio" value="BU Finance" id="kt_modal_update_role_option_4">>                    
+                    <label class="form-check-label" for="kt_modal_update_role_option_4">
+                        <div class="fw-bolder text-gray-800">BU Finance</div>
+                        <div class="text-gray-600"> FS signoff</div>
+                    </label>
+                </div>
+            </div>
+        </div>         
+                   
+       
+    </div>
+  
+    <div class="modal-footer">        
+        <button type="submit" class="btn btn-success" (click)="saveUserRequest()">
+          Add
+        </button>
+        <button type="button" class="btn btn-success" (click)="c('Save click')">Close</button>
+    </div>
+  
+  </form>
+  </ng-template>
+   -->

@@ -1,0 +1,1860 @@
+<div class="bg-form">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card mt-n4 mx-n4">
+        <div class="bg-soft-warning">
+          <div class="card-body pb-0 px-4">
+            <div class="row mb-2">
+              <div class="col-md">
+                <div class="row align-items-center g-3">
+                  <div class="col-md-auto">
+                    <div class="avatar-md">
+                      <div class="avatar-title bg-white rounded-circle">
+                        <img src="./assets/image/viewdetails.png" alt="" class="avatar-xs">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md">
+                    <div>
+                      <h4 class="fw-bold">{{selectedItem.Title}} - {{selectedItem.EntityName}}</h4>
+                      <div class="hstack gap-3 flex-wrap">
+                        <div>Category : <div class="badge rounded-pill bg-Category fs-12">{{selectedItem.Category}}</div></div>
+                        <div class="vr"></div>
+                        <div>Business Unit : <div class="badge rounded-pill bg-BusinessUnit fs-12">{{selectedItem.BusinessUnit}}</div></div>
+                        <div class="vr"></div>
+                        <div>Target FS completion (Audit Report release) date : <span class="fw-medium">{{targetDate}}</span></div>
+
+                      </div>
+                      <div class="hstack gap-3 flex-wrap">
+                        <div>Country : <div class="badge rounded-pill bg-Country fs-12">{{selectedItem.Country}}</div></div>
+                        <div class="vr"></div>
+                        <div>Basis of FS preparation : <div class="badge rounded-pill bg-Category fs-12">{{selectedItem.ConsolidatedStandalone}}</div></div>
+                        <div class="vr"></div>
+                        <div>Operational/ Dormant : <span class="fw-medium">{{selectedItem.DormantOperational}}</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-auto">
+                <div class="widget-content p-0">
+                  <div class="widget-content-wrapper">
+                    <!-- <div class="widget-content-left mr-3">
+                      <div class="widget-content-left">
+                        <div *ngIf="Preparer == ''" class="avatar avatar-l" style="height: 3rem;width: 3rem;">
+                          <div class="avatar-name rounded-circle">
+                            <span *ngIf="selectedItem.Preparer != null">{{selectedItem.Preparer.charAt(0).toUpperCase()}}</span>
+                          </div>
+                        </div>
+                        <img *ngIf="Preparer != ''" width="50" class="rounded-circle" src={{Preparer}} alt="">
+                      </div>
+                    </div> -->
+                    <div class="widget-content-left">
+                      <div class="widget-heading">GS GAP</div>
+                      <div class="widget-subheading opacity-7">{{selectedItem.GSGAP}}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="widget-content p-0">
+                  <div class="widget-content-wrapper">
+                    <!-- <div class="widget-content-left mr-3">
+                      <div class="widget-content-left">
+                        <div *ngIf="Reviewer == ''" class="avatar avatar-l" style="height: 3rem;width: 3rem;">
+                          <div class="avatar-name rounded-circle">
+                            <span *ngIf="selectedItem.Reviewer != null">{{selectedItem.Reviewer.charAt(0).toUpperCase()}}</span>
+                          </div>
+                        </div>
+                        <img *ngIf="Reviewer != ''" width="50" class="rounded-circle" src={{Reviewer}} alt="">
+                      </div>
+                    </div> -->
+                    <div class="widget-content-left">
+                      <div class="widget-heading">Consultant GAP</div>
+                      <div class="widget-subheading opacity-7">{{selectedItem.ConsultantGAP}}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="widget-content p-0">
+                  <div class="widget-content-wrapper">
+                    <!-- <div class="widget-content-left mr-3">
+                      <div class="widget-content-left">
+                        <div *ngIf="Preparer == ''" class="avatar avatar-l" style="height: 3rem;width: 3rem;">
+                          <div class="avatar-name rounded-circle">
+                            <span *ngIf="selectedItem.Preparer != null">{{selectedItem.Preparer.charAt(0).toUpperCase()}}</span>
+                          </div>
+                        </div>
+                        <img *ngIf="Preparer != ''" width="50" class="rounded-circle" src={{Preparer}} alt="">
+                      </div>
+                    </div> -->
+                    <div class="widget-content-left">
+                      <div class="widget-heading">Auditor GAP</div>
+                      <div class="widget-subheading opacity-7">{{selectedItem.AuditorGAP}}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="widget-content p-0">
+                  <div class="widget-content-wrapper">
+                    <!-- <div class="widget-content-left mr-3">
+                      <div class="widget-content-left">
+                        <div *ngIf="Reviewer == ''" class="avatar avatar-l" style="height: 3rem;width: 3rem;">
+                          <div class="avatar-name rounded-circle">
+                            <span *ngIf="selectedItem.Reviewer != null">{{selectedItem.Reviewer.charAt(0).toUpperCase()}}</span>
+                          </div>
+                        </div>
+                        <img *ngIf="Reviewer != ''" width="50" class="rounded-circle" src={{Reviewer}} alt="">
+                      </div>
+                    </div> -->
+                    <div class="widget-content-left">
+                      <div class="widget-heading">CRT GAP</div>
+                      <div class="widget-subheading opacity-7">{{selectedItem.CRTGAP}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vr"></div>
+              <div class="col-md-auto">
+                <div class="widget-content p-0">
+                  <div class="widget-content-wrapper">
+                    <div class="widget-content-left mr-3">
+                      <div class="widget-content-left">
+                        <div *ngIf="Preparer == ''" class="avatar avatar-l" style="height: 3rem;width: 3rem;">
+                          <div class="avatar-name rounded-circle">
+                            <span *ngIf="selectedItem.Preparer != null">{{selectedItem.Preparer.charAt(0).toUpperCase()}}</span>
+                          </div>
+                        </div>
+                        <img *ngIf="Preparer != ''" width="50" class="rounded-circle" src={{Preparer}} alt="">
+                      </div>
+                    </div>
+                    <div class="widget-content-left flex2">
+                      <div class="widget-heading">{{selectedItem.Preparer}}</div>
+                      <div class="widget-subheading opacity-7">Preparer</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="widget-content p-0">
+                  <div class="widget-content-wrapper">
+                    <div class="widget-content-left mr-3">
+                      <div class="widget-content-left">
+                        <div *ngIf="Reviewer == ''" class="avatar avatar-l" style="height: 3rem;width: 3rem;">
+                          <div class="avatar-name rounded-circle">
+                            <span *ngIf="selectedItem.Reviewer != null">{{selectedItem.Reviewer.charAt(0).toUpperCase()}}</span>
+                          </div>
+                        </div>
+                        <img *ngIf="Reviewer != ''" width="50" class="rounded-circle" src={{Reviewer}} alt="">
+                      </div>
+                    </div>
+                    <div class="widget-content-left flex2">
+                      <div class="widget-heading">{{selectedItem.Reviewer}}</div>
+                      <div class="widget-subheading opacity-7">Reviewer</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vr"></div>
+              <div class="col-md-auto">
+                <div class="stage-font">
+                  <label class="fw-medium" style="margin-bottom: 0.1rem;">Current Stage</label><br>                  
+                  <span *ngIf="(selectedItem.CurrentStage == stages.Stage1 || selectedItem.CurrentStage == stages.Stage5)" 
+                  class="badge bg-current-stage fs-12">{{selectedItem.CurrentStage}}</span>
+                  <span *ngIf="selectedItem.CurrentStage == stages.Stage2" 
+                  class="badge bg-current-stage fs-12">{{selectedItem.Stage2CurrentState}}</span>
+                  <span *ngIf="selectedItem.CurrentStage == stages.Stage3" 
+                  class="badge bg-current-stage fs-12">{{selectedItem.Stage3CurrentState}}</span>
+                  <span *ngIf="selectedItem.CurrentStage == stages.Stage4" 
+                  class="badge bg-current-stage fs-12">{{selectedItem.Stage4CurrentState}}</span>
+                </div>
+                <div class="stage-font">
+                  <label class="fw-medium" style="margin-bottom: 0.1rem;">Current Status</label><br>
+                  <span class="badge bg-current-status fs-12">{{selectedItem.CurrentStatus}}</span>
+                </div>
+              </div>
+              <div class="vr"></div>
+              <div class="col-md-auto">               
+                <div class="stage-font">
+                  <label class="fw-medium" style="margin-bottom: 0.1rem;">Action Holder</label><br>
+                  <span class="badge bg-current-status fs-12">{{selectedItem.ActionHolder}}</span>
+                </div>
+              </div>
+              <div class="vr"></div>
+              <div class="col-md-auto">
+                <!--<img class="info-circle" (click)="viewHistory(stages.Stage1, content)" src="./assets/image/info.png">-->
+                <!--<span class="badge bg-current-status fs-12" (click)="viewHistory(stages.Stage1, content)">View History</span>-->
+                <button class="btn btn-success" (click)="viewHistory(content)" style="padding:20px;margin:15px;">
+                  View<br/> History
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="angForm">
+    <mat-tab-group (selectedTabChange)="onChangeTabSelect($event)" animationDuration="0ms" [selectedIndex]="tabIndex">
+      <mat-tab>
+        <ng-template mat-tab-label>         
+            <img src="./assets/image/submitdocument.png">
+            <span>MAFP Data Submission</span>
+        </ng-template>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">Deadline</label>
+                      <input type="text" class="form-control" formControlName="Stage1Deadline" readonly>
+                    </div>
+                  </div>
+                  <!-- <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">Revised Deadline</label>
+                      <input type="text" class="form-control" formControlName="Stage1RevisedTimeline" readonly>
+                    </div>
+                  </div> -->
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">Actual Submission</label>
+                      <input type="text" class="form-control" formControlName="Stage1ActualSubmission" readonly>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">Status</label>
+                      <input type="text" class="form-control" formControlName="Stage1Status" readonly>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">GAP</label>
+                      <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control text-right"
+                             formControlName="Stage1GAP" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label style="width: 70%;" class="control-label">Comments</label>
+                  <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage1,'')" style="padding:5px;margin:5px 0!important;float: right;">
+                    See previous comments
+                  </button>
+                  <div class="input-group">
+                    <textarea class="form-control" formControlName="Stg1Comments" name="textarea-input" rows="4"></textarea>
+                   
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+            <div class="col-md-auto">
+              <button class="btn btn-success" (click)="verifyStage1CheckList(stg1content, stages.Stage1)" style="padding:10px;margin:10px;">
+                Verify Check List
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>          
+            <img src="./assets/image/checklist.png">
+            <span>FS Preparation and Review</span>          
+        </ng-template>
+        <div class="card">
+          <div class="card-body">
+
+            <mat-tab-group class="inventorytab" animationDuration="0ms" [selectedIndex]="tabEYIndex" (selectedTabChange)="onChangeEYTabSelect($event)">
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div *ngIf="selectedItem.Stage2CurrentState == ey.EYFS" class="badge rounded-pill bg-Category fs-12">Assigned To</div>
+                  <div>Consultant FS Submission</div>
+                </ng-template>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Deadline</label>
+                              <input type="text" class="form-control" formControlName="Stage2Deadline" readonly>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Actual Submission</label>
+                              <input type="text" class="form-control" formControlName="Stage2ActualSubmission" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Status</label>
+                              <input type="text" class="form-control" formControlName="Stage2Status" readonly>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">GAP</label>
+                              <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control  text-right"
+                                     formControlName="Stage2GAP" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage2,ey.EYFS)" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                          <div class="input-group">
+                            <textarea class="form-control" formControlName="Stg2Comments" name="textarea-input"
+                                      rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-auto">
+                      <button class="btn btn-success" (click)="verifyStage2CheckList(stg2content, s2Tabs.Tab1, ey.EYFS)" style="padding:10px;margin:10px;">
+                        Verify Check List
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div *ngIf="selectedItem.Stage2CurrentState == ey.FSTOKPMG" class="badge rounded-pill bg-Category fs-12">Assigned To</div>
+                  <div>MAFP Review & FS Submission to Auditor</div>
+                </ng-template>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Deadline</label>
+                              <input type="text" class="form-control" formControlName="Stage21Deadline" readonly>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Actual Submission</label>
+                              <input type="text" class="form-control" formControlName="Stage21ActualSubmission" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Status</label>
+                              <input type="text" class="form-control" formControlName="Stage21Status" readonly>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">GAP</label>
+                              <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control  text-right"
+                                     formControlName="Stage21GAP" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                          <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage2,ey.FSTOKPMG)" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                          <div class="input-group">
+                            <textarea class="form-control" formControlName="Stg21Comments" name="textarea-input"
+                                      rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-auto">
+                      <button class="btn btn-success" (click)="verifyStage2CheckList(stg2content, s2Tabs.Tab1, ey.FSTOKPMG)" style="padding:10px;margin:10px;">
+                        Verify Check List
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+
+
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="./assets/image/task.png">
+            <span>Audit Reviews and clearance</span>         
+        </ng-template>
+        <div class="card">
+          <div class="card-body" style="padding-top: 0">
+            <mat-tab-group class="inventorytab" animationDuration="0ms" [selectedIndex]="tabKpmgIndex">
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div *ngIf="selectedItem.Stage3CurrentState == kpmg.Manager" class="badge rounded-pill bg-Category fs-12">Assigned To</div>
+                  <div>Auditor Manager FS review</div>
+                </ng-template>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Deadline</label>
+                              <input type="text" class="form-control" formControlName="Stage31Deadline" readonly>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Actual Submission</label>
+                              <input type="text" class="form-control" formControlName="Stage31ActualSubmission" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Status</label>
+                              <input type="text" class="form-control" formControlName="Stage31Status" readonly>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">GAP</label>
+                              <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control  text-right"
+                                     formControlName="Stage31GAP" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage3,kpmg.Manager)" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                          <div class="input-group">
+                            <textarea class="form-control" formControlName="Stg31Comments" name="textarea-input"
+                                      rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-auto">
+                        <button class="btn btn-success" (click)="verifyStage3CheckList(stg3content, s2Tabs.Tab1, kpmg.Manager)" style="padding:10px;margin:10px;">
+                          Verify Check List
+                        </button>
+                      </div>
+                    </div>
+                   
+                  </div>
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div *ngIf="selectedItem.Stage3CurrentState == kpmg.Director" class="badge rounded-pill bg-Category fs-12">Assigned To</div>
+                  <div>Auditor Director/Partner FS review</div>
+                </ng-template>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Deadline</label>
+                              <input type="text" class="form-control" formControlName="Stage32Deadline" readonly>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Actual Submission</label>
+                              <input type="text" class="form-control" formControlName="Stage32ActualSubmission" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Status</label>
+                              <input type="text" class="form-control" formControlName="Stage32Status" readonly>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">GAP</label>
+                              <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control  text-right"
+                                     formControlName="Stage32GAP" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                          <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage3,kpmg.Director)" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                          <div class="input-group">
+                            <textarea class="form-control" formControlName="Stg32Comments" name="textarea-input"
+                                      rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-auto">
+                        <button class="btn btn-success" (click)="verifyStage3CheckList(stg3content, s2Tabs.Tab1, kpmg.Director)" style="padding:10px;margin:10px;">
+                          Verify Check List
+                        </button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div *ngIf="selectedItem.Stage3CurrentState == kpmg.Final && selectedItem.Stage33Status != status.Approved" class="badge rounded-pill bg-Category fs-12">Assigned To</div>
+                  <div>Auditor Final FS review</div>
+                </ng-template>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Deadline</label>
+                              <input type="text" class="form-control" formControlName="Stage33Deadline" readonly>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Actual Submission</label>
+                              <input type="text" class="form-control" formControlName="Stage33ActualSubmission" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Status</label>
+                              <input type="text" class="form-control" formControlName="Stage33Status" readonly>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">GAP</label>
+                              <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control  text-right"
+                                     formControlName="Stage33GAP" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage3,kpmg.Final)" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                          <div class="input-group">
+                            <textarea class="form-control" formControlName="Stg33Comments" name="textarea-input"
+                                      rows="4"></textarea>
+                          </div>
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <div class="col-md-auto">
+                      <button class="btn btn-success" (click)="verifyStage3CheckList(stg3content, s2Tabs.Tab1, kpmg.Final)" style="padding:10px;margin:10px;">
+                        Verify Check List
+                      </button>
+                    </div>
+
+
+                  </div>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="./assets/image/agreement.png">
+            <span>FS signoff</span>         
+        </ng-template>
+        
+
+
+        <div class="card">
+          <div class="card-body">
+
+            <mat-tab-group class="inventorytab" animationDuration="0ms" [selectedIndex]="tabSignoffIndex">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div *ngIf="selectedItem.Stage4CurrentState == signoff.GSFS" class="badge rounded-pill bg-Category fs-12">Assigned To</div>
+                  <div>GS FS Pack Submission</div>
+                </ng-template>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Deadline</label>
+                              <input type="text" class="form-control" formControlName="Stage4Deadline" readonly>
+                            </div>
+                          </div>
+        
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Actual Submission</label>
+                              <input type="text" class="form-control" formControlName="Stage4ActualSubmission" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Status</label>
+                              <input type="text" class="form-control" formControlName="Stage4Status" readonly>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">GAP</label>
+                              <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control  text-right"
+                                     formControlName="Stage4GAP" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage4,signoff.GSFS)" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                          <div class="input-group">
+                            <textarea class="form-control" formControlName="Stg4Comments" name="textarea-input"
+                                      rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-auto">
+                        <button class="btn btn-success" (click)="verifyStage4CheckList(stg4content, s2Tabs.Tab1, signoff.GSFS)" style="padding:10px;margin:10px;">
+                          Verify Check List
+                        </button>
+                       
+                      </div>
+        
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div *ngIf="selectedItem.Stage4CurrentState == signoff.MAFP" class="badge rounded-pill bg-Category fs-12">Assigned To</div>
+                  <div>MAFP Sign-off</div>
+                </ng-template>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Deadline</label>
+                              <input type="text" class="form-control" formControlName="Stage42Deadline" readonly>
+                            </div>
+                          </div>
+        
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Actual Submission</label>
+                              <input type="text" class="form-control" formControlName="Stage42ActualSubmission" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Status</label>
+                              <input type="text" class="form-control" formControlName="Stage42Status" readonly>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">GAP</label>
+                              <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control text-right"
+                                     formControlName="Stage42GAP" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage4,signoff.MAFP)" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                          <div class="input-group">
+                            <textarea class="form-control" formControlName="Stg42Comments" name="textarea-input"
+                                      rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-auto">                      
+                        <button class="btn btn-success" (click)="verifyStage4CheckList(stg4content, s2Tabs.Tab1, signoff.MAFP)" style="padding:10px;margin:10px;">
+                          Verify Check List
+                        </button>
+                      </div>
+        
+                    </div>
+                  </div>
+                </div>
+                
+              </mat-tab>
+
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <div *ngIf="selectedItem.Stage4CurrentState == signoff.KPMG" class="badge rounded-pill bg-Category fs-12">Assigned To</div>
+                  <div>Auditor Sign-off</div>
+                </ng-template>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Deadline</label>
+                              <input type="text" class="form-control" formControlName="Stage43Deadline" readonly>
+                            </div>
+                          </div>
+        
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Actual Submission</label>
+                              <input type="text" class="form-control" formControlName="Stage43ActualSubmission" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">Status</label>
+                              <input type="text" class="form-control" formControlName="Stage43Status" readonly>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6">
+                            <div class="form-group">
+                              <label style="width:100%" class="control-label">GAP</label>
+                              <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control  text-right"
+                                     formControlName="Stage43GAP" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        
+                      <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage4,signoff.KPMG)" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                          <div class="input-group">
+                            <textarea class="form-control" formControlName="Stg43Comments" name="textarea-input"
+                                      rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-auto">
+                        <button class="btn btn-success" (click)="verifyStage4CheckList(stg4content, s2Tabs.Tab1, signoff.KPMG)" style="padding:10px;margin:10px;">
+                          Verify Check List
+                        </button>
+                      </div>
+        
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+
+
+          </div>
+        </div>
+
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="./assets/image/archive.png">
+            <span>FS Archiving</span>
+        </ng-template>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">Deadline</label>
+                      <input type="text" class="form-control" formControlName="Stage5Deadline" readonly>
+
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">Actual Submission</label>
+                      <input type="text" class="form-control" formControlName="Stage5ActualSubmission" readonly>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">Status</label>
+                      <input type="text" class="form-control" formControlName="Stage5Status" readonly>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <label style="width:100%" class="control-label">GAP</label>
+                      <input type="number" min="0" max="8" pattern="[0-9]+" class="form-control  text-right"
+                             formControlName="Stage5GAP" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                   <label style="width: 70%;" class="control-label">Comments</label>
+                          <button class="btn btn-success" (click)="viewStgHistory(stgcontent,stages.Stage5,'')" style="padding:5px;margin:5px 0!important;float: right;">
+                            See previous comments
+                          </button>
+                  <div class="input-group">
+                    <textarea class="form-control" formControlName="Stg5Comments" name="textarea-input"
+                              rows="4"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-auto">
+                <button class="btn btn-success" (click)="verifyStage5CheckList(stg5content, s2Tabs.Tab1)" style="padding:10px;margin:10px;">
+                  Verify Check List
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-lg-12">
+
+        <div class="card card-body" style="border-top: 3px solid #F89715;padding: 0;">
+          <div class="card-header">
+            <h5>Documents</h5>
+            <div class="card-header-right ">
+              <i class="bi bi-three-dots"></i>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <iframe [src]="safeFileUploadSrc" width="100%" height="500" class="iframeClass" *ngIf="ifFileUploadAllowed"></iframe>
+            <iframe [src]="safeFileView" width="100%" height="500" class="iframeClass" *ngIf="ifFileUploadNotAllowed"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage1 && ifStage1Active">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+        <button type="submit" class="btn btn-submit" (click)="saveUpdateRequest(status.Submitted,stages.Stage1)"
+                *ngIf="(selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) && (isGSTeamMember || isSuperuser)">
+          Submit
+        </button>
+        <button type="submit" class="btn btn-success" (click)="saveUpdateRequest(status.Underreview,stages.Stage1)"
+                *ngIf="selectedItem.CurrentStage == stages.Stage1 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && (isEYTeamMember || isSuperuser)">
+          Review
+        </button>
+        <button type="submit" class="btn btn-success" (click)="saveUpdateRequest(status.Approved,stages.Stage1)"
+                *ngIf="selectedItem.CurrentStage == stages.Stage1 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && (isEYTeamMember || isSuperuser)">
+          Approve
+        </button>
+        <button type="submit" class="btn btn-reject" (click)="saveUpdateRequest(status.Rejected,stages.Stage1)"
+                *ngIf="selectedItem.CurrentStage == stages.Stage1 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && (isEYTeamMember || isSuperuser)">
+          Reject
+        </button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage2 && ifStage2Active && selectedItem.Stage2CurrentState == ey.EYFS">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) 
+        && (isEYTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage2(status.Submitted, stages.Stage2, ey.EYFS)">
+          Submit
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+        && (isGSTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage2(status.Underreview, stages.Stage2, ey.EYFS)">
+          Review
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+        && (isGSTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage2(status.Approved, stages.Stage2, ey.EYFS)">
+          Approve
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview)
+        && (isGSTeamMember || isSuperuser)" class="btn btn-reject" (click)="saveUpdateRequestStage2(status.Rejected, stages.Stage2, ey.EYFS)">
+          Reject
+        </button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage2 && ifStage2Active && selectedItem.Stage2CurrentState == ey.FSTOKPMG">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) 
+        && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage2(status.Submitted, stages.Stage2, ey.FSTOKPMG)">
+          Submit
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+        && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage2(status.Underreview, stages.Stage2, ey.FSTOKPMG)">
+          Review
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+        && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage2(status.Approved, stages.Stage2, ey.FSTOKPMG)">
+          Approve
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+        && (isKPMGTeamMember || isSuperuser)" class="btn btn-reject" (click)="saveUpdateRequestStage2(status.Rejected, stages.Stage2, ey.FSTOKPMG)">
+          Reject
+        </button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage3 && ifStage3Active && selectedItem.Stage3CurrentState == kpmg.Manager">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && (selectedItem.CurrentStatus == status.Draft || selectedItem.CurrentStatus == status.ReqIteration) 
+        && (isEYTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.Submitted, stages.Stage3, kpmg.Manager)">
+          Submit
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Submitted) && selectedItem.ActionHolder == 'GS') 
+        && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.ReqIteration, stages.Stage3, kpmg.Manager)">
+          Requires Iterations
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Submitted) && selectedItem.ActionHolder == 'GS') 
+        && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.Submitted, stages.Stage3, kpmg.Manager)">
+          Submit
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && selectedItem.ActionHolder == 'Auditor' )
+        && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage3(status.Underreview, stages.Stage3, kpmg.Manager)">
+          Review
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && selectedItem.ActionHolder == 'Auditor' )
+        && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage3(status.Approved, stages.Stage3, kpmg.Manager)">
+          Approve
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && selectedItem.ActionHolder == 'Auditor')
+        && (isKPMGTeamMember || isSuperuser)" class="btn btn-reject" (click)="saveUpdateRequestStage3(status.Rejected, stages.Stage3, kpmg.Manager)">
+          Reject
+        </button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage3 && ifStage3Active && selectedItem.Stage3CurrentState == kpmg.Director">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ( selectedItem.CurrentStatus == status.Draft || selectedItem.CurrentStatus == status.ReqIteration) 
+          && (isEYTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.Submitted, stages.Stage3, kpmg.Director)">
+          Submit
+        </button>
+        
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Rejected  || selectedItem.CurrentStatus == status.Submitted)&& selectedItem.ActionHolder == 'GS')  
+        && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.ReqIteration, stages.Stage3, kpmg.Director)">
+          Requires Iterations
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Submitted) && selectedItem.ActionHolder == 'GS') 
+        && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.Submitted, stages.Stage3, kpmg.Director)">
+          Submit
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview)  && selectedItem.ActionHolder == 'Auditor' )
+          && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage3(status.Underreview, stages.Stage3, kpmg.Director)">
+          Review
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && selectedItem.ActionHolder == 'Auditor' )
+          && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage3(status.Approved, stages.Stage3, kpmg.Director)">
+          Approve
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && selectedItem.ActionHolder == 'Auditor' )
+          && (isKPMGTeamMember || isSuperuser)" class="btn btn-reject" (click)="saveUpdateRequestStage3(status.Rejected, stages.Stage3, kpmg.Director)">
+          Reject
+        </button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage3 && ifStage3Active && selectedItem.Stage3CurrentState == kpmg.Final">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && (selectedItem.CurrentStatus == status.Draft || selectedItem.CurrentStatus == status.ReqIteration) 
+          && (isEYTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.Submitted, stages.Stage3, kpmg.Final)">
+          Submit
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Submitted )&& selectedItem.ActionHolder == 'GS') 
+        && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.ReqIteration, stages.Stage3, kpmg.Final)">
+          Requires Iterations
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Rejected|| selectedItem.CurrentStatus == status.Submitted) && selectedItem.ActionHolder == 'GS')  
+        && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage3(status.Submitted, stages.Stage3, kpmg.Final)">
+          Submit
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && selectedItem.ActionHolder == 'Auditor')
+          && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage3(status.Underreview, stages.Stage3, kpmg.Final)">
+          Review
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && selectedItem.ActionHolder == 'Auditor')
+          && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage3(status.Approved, stages.Stage3, kpmg.Final)">
+          Approve
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && ((selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) && selectedItem.ActionHolder == 'Auditor')
+          && (isKPMGTeamMember || isSuperuser)" class="btn btn-reject" (click)="saveUpdateRequestStage3(status.Rejected, stages.Stage3, kpmg.Final)">
+          Reject
+        </button>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage4 && ifStage4Active && selectedItem.Stage4CurrentState == signoff.GSFS">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) 
+          && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage4(status.Submitted)">
+          Submit
+        </button>
+        
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+          && isSuperuser" class="btn btn-success" (click)="saveUpdateRequestStage4(status.Approved)">
+          Approve
+        </button>
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+          && isSuperuser" class="btn btn-reject" (click)="saveUpdateRequestStage4(status.Rejected)">
+          Reject
+        </button>
+
+      </div>
+    </div>
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage4 && ifStage4Active && selectedItem.Stage4CurrentState == signoff.MAFP">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) 
+          && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage4(status.Submitted)">
+          Submit
+        </button>
+        
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+          && isSuperuser" class="btn btn-success" (click)="saveUpdateRequestStage4(status.Approved)">
+          Approve
+        </button>
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+          && isSuperuser" class="btn btn-reject" (click)="saveUpdateRequestStage4(status.Rejected)">
+          Reject
+        </button>
+
+      </div>
+    </div>
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage4 && ifStage4Active && selectedItem.Stage4CurrentState == signoff.KPMG">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) 
+          && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="saveUpdateRequestStage4(status.Submitted)">
+          Submit
+        </button>
+        
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+          && (isKPMGTeamMember || isSuperuser)" class="btn btn-success" (click)="saveUpdateRequestStage4(status.Approved)">
+          Approve
+        </button>
+
+        <button type="submit" *ngIf="(selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview) 
+          && (isKPMGTeamMember || isSuperuser)" class="btn btn-reject" (click)="saveUpdateRequestStage4(status.Rejected)">
+          Reject
+        </button>
+
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;" *ngIf="ifStage5 && ifStage5Active">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage5 && (selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft)
+        && selectedItem.Stage5Status != status.Approved && (isGSTeamMember || isSuperuser)"
+                class="btn btn-submit" (click)="saveUpdateRequest(status.Submitted,stages.Stage5)">
+          Submit
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage5 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview)
+                            && selectedItem.Stage5Status != status.Approved && isSuperuser"
+                class="btn btn-success" (click)="saveUpdateRequest(status.Approved, stages.Stage5)">
+          Approve
+        </button>
+        <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage5 && (selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.Underreview)
+                            && selectedItem.Stage5Status != status.Approved && isSuperuser"
+                class="btn btn-reject" (click)="saveUpdateRequest(status.Rejected, stages.Stage5)">
+          Reject
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header" style="width:1140px;">
+        <h2 class="fw-bolder" style="font-size: 1.5rem;">FS History</h2>
+        <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="modal-body scroll-y">  
+      <table id="tblHistoryData" class="bc-table" style="width: 100% !important;">
+                <thead>
+                  <tr>
+                    <th>Stage</th>
+                    <th>Deadline</th>
+                    <th>Actual Submission</th>
+                    <th>Variable Date</th>
+                    <th>GAP</th>
+                    <th>Comments</th>
+                    <th>Status</th>
+                    <th>Author</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="cursor: pointer;"
+                      *ngFor="let item of tableHistoryData">
+                    <td>{{item.Stage}}</td>
+                    <td>{{item.SubmissionDate}}</td>
+                    <td>{{item.ActualFSSubmission}}</td>
+                    <td>{{item.VariableDeadline}}</td>
+                    <td>{{item.GAP}}</td>
+                    <td>{{item.Comments}}</td>
+                    <td>{{item.Status}}</td>
+                    <td>{{item.Author.Title}}</td>
+                   
+                  </tr>
+                </tbody>
+              </table>           
+    </div>
+  </ng-template>
+
+  <ng-template #stgcontent let-c="close" let-d="dismiss">
+    <div class="modal-header" style="width:1140px;">
+        <h2 class="fw-bolder" style="font-size: 1.5rem;">FS History</h2>
+        <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="modal-body scroll-y">  
+      <table id="tblHistoryStgData" class="bc-table" style="width: 100% !important;">
+                <thead>
+                  <tr>
+                    <th>Comment Date</th>
+                    <th>Variable Date</th>
+                    <th>GAP</th>
+                    <th>Stage</th>
+                    <th>Sub Stage</th>
+                    <th>Comments</th>
+                    <th>Status</th>
+                    <th>Action Holder</th>
+                    <th>Author</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="cursor: pointer;"
+                      *ngFor="let item of tableHistoryData">
+                    <td>{{item.ActualFSSubmission}}</td>
+                    <td>{{item.VariableDeadline}}</td>
+                    <td>{{item.GAP}}</td>
+                    <td>{{item.Stage}}</td>
+                    <td>{{item.State}}</td>                  
+                    <td>{{item.Comments}}</td>
+                    <td>{{item.Status}}</td>
+                    <td>{{item.ActionHolder}}</td>
+                    <td>{{item.Author.Title}}</td>
+                   
+                  </tr>
+                </tbody>
+              </table>           
+    </div>
+  </ng-template>
+
+  <ng-template #stg1content let-c="close" let-d="dismiss">
+    <div class="modal-header" style="width:1140px;">
+        <h2 class="fw-bolder" style="font-size: 1.5rem;">FS Check List</h2>
+        <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="modal-body scroll-y">  
+      <form [formGroup]="stg1Form">  
+      <table class="bc-table" style="width: 100% !important;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Requirements</th>
+            <th>Is Uploaded?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let clist of stg1ChecklistData">
+            <td>{{clist.orderBy}}</td>
+            <td>{{clist.Question}} <span *ngIf="clist.isRequired" style="color: red;">*</span></td>
+            <td><input type="checkbox" name="onoffswitch" class="form-check-input" [(ngModel)]="clist.isChecked" formControlName="{{clist.controlName}}"></td>
+            </tr>
+        </tbody>
+      </table>
+      </form> 
+    <div>Please make sure mandate <span style="color: red;">(*)</span> files are uploaded</div>
+    <button class="btn btn-submit" (click)="stage1ConvertToJson()" *ngIf="(selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) && (isGSTeamMember || isSuperuser)">Confirm</button>
+    </div>
+  </ng-template>
+
+  <ng-template #stg2content let-c="close" let-d="dismiss">
+    <div class="modal-header" style="width:1140px;">
+        <h2 class="fw-bolder" style="font-size: 1.5rem;">FS Check List</h2>
+        <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="modal-body scroll-y">  
+      
+        <mat-tab-group class="stg21checklist" animationDuration="0ms" [selectedIndex]="tabS21EYChildIndex" (selectedTabChange)="onChangeStg2TabSelect($event)">
+
+          <mat-tab class="stg21tab">
+            <ng-template mat-tab-label style="width: 15%;">              
+              <div>General</div>
+            </ng-template>
+            <div class="card">
+              <div class="card-body">
+                <table class="bc-table" style="width: 100% !important;">
+                  <thead>
+                    <tr>
+                      <th style="width: 5%;">#</th>
+                      <th style="width: 40%;">Requirements</th>
+                      <th [attr.colspan]="3" style="width: 15%;">In Compliance?</th>
+                      <th style="width: 40%;">Brief Justification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let cat of stg2HeaderRowItems; let i = index">
+                      <ng-container *ngIf="getItemsByCategory(cat.category).length > 1; else singleItem">
+                        <tr class="category-row">
+                          <td>{{ cat.qid }}</td>
+                          <td [attr.colspan]="4">                    
+                            {{ cat.header }}
+                          </td>
+                        </tr>
+                        <ng-container *ngFor="let item of getItemsByCategory(cat.category);let j = index">
+                          <tr>
+                            <td>{{item.qid}}</td>
+                            <td>{{ item.question }}</td>                            
+                            <td>
+                              <input type="radio" name="{{ item.control }}" value="Yes" [checked]="item.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(item, 'Yes', 'Stage2')"> Yes
+                            </td>
+                              <td>
+                              <input type="radio" name="{{ item.control }}" value="No" [checked]="item.default === 'No' ? true : null" (click)="updateSelectedOptiones(item, 'No', 'Stage2')"> No
+                            </td>
+                              <td>
+                              <input type="radio" name="{{ item.control }}" value="NA" [checked]="item.default === 'NA' ? true : null" (click)="updateSelectedOptiones(item, 'NA', 'Stage2')"> N/A
+                            </td>
+                            <td><textarea name="{{ item.control }}" placeholder="Enter your text here..." 
+                              (change)="updateStgComments(item, $event.target, 'Stage2')">{{ getStg2Comments(item.control) }}</textarea>
+                            </td>
+                          </tr>
+                        </ng-container>
+                      </ng-container>
+                      <ng-template #singleItem>
+                        <tr>
+                          <td>{{ cat.qid }}</td>
+                          <td>                   
+                            {{ cat.header }}
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="Yes" [checked]="cat.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(cat, 'Yes', 'Stage2')"> Yes
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="No" [checked]="cat.default === 'No' ? true : null" (click)="updateSelectedOptiones(cat, 'No', 'Stage2')"> No
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="NA" [checked]="cat.default === 'NA' ? true : null" (click)="updateSelectedOptiones(cat, 'NA', 'Stage2')"> N/A
+                          </td>
+                          <td><textarea name="{{ cat.control }}" placeholder="Enter your text here..." (change)="updateStgComments(cat, $event.target, 'Stage2')">{{ getStg2Comments(cat.control) }}</textarea>
+                          </td>
+                        </tr>
+                      </ng-template>
+                    </ng-container>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>              
+              <div>Accounting Policies and Notes</div>
+            </ng-template>
+            <div class="card">
+              <div class="card-body">
+                <table class="bc-table" style="width: 100% !important;">
+                  <thead>
+                    <tr>
+                      <th style="width: 5%;">#</th>
+                      <th style="width: 40%;">Requirements</th>
+                      <th [attr.colspan]="3" style="width: 15%;">In Compliance?</th>
+                      <th style="width: 40%;">Brief Justification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let cat of stg2HeaderRowItems; let i = index">
+                      <ng-container *ngIf="getItemsByCategory(cat.category).length > 1; else singleItem">
+                        <tr class="category-row">
+                          <td>{{ cat.qid }}</td>
+                          <td [attr.colspan]="4">                    
+                            {{ cat.header }}
+                          </td>
+                        </tr>
+                        <ng-container *ngFor="let item of getItemsByCategory(cat.category);let j = index">
+                          <tr>
+                            <td>{{item.qid}}</td>
+                            <td>{{ item.question }}</td>                            
+                            <td>
+                              <input type="radio" name="{{ item.control }}" value="Yes" [checked]="item.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(item, 'Yes', 'Stage2')"> Yes
+                            </td>
+                              <td>
+                              <input type="radio" name="{{ item.control }}" value="No" [checked]="item.default === 'No' ? true : null" (click)="updateSelectedOptiones(item, 'No', 'Stage2')"> No
+                            </td>
+                              <td>
+                              <input type="radio" name="{{ item.control }}" value="NA" [checked]="item.default === 'NA' ? true : null" (click)="updateSelectedOptiones(item, 'NA', 'Stage2')"> N/A
+                            </td>
+                            <td><textarea name="{{ item.control }}" placeholder="Enter your text here..." 
+                              (change)="updateStgComments(item, $event.target, 'Stage2')">{{ getStg2Comments(item.control) }}</textarea>
+                            </td>
+                          </tr>
+                        </ng-container>
+                      </ng-container>
+                      <ng-template #singleItem>
+                        <tr>
+                          <td>{{ cat.qid }}</td>
+                          <td>                   
+                            {{ cat.header }}
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="Yes" [checked]="cat.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(cat, 'Yes', 'Stage2')"> Yes
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="No" [checked]="cat.default === 'No' ? true : null" (click)="updateSelectedOptiones(cat, 'No', 'Stage2')"> No
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="NA" [checked]="cat.default === 'NA' ? true : null" (click)="updateSelectedOptiones(cat, 'NA', 'Stage2')"> N/A
+                          </td>
+                          <td><textarea name="{{ cat.control }}" placeholder="Enter your text here..." (change)="updateStgComments(cat, $event.target, 'Stage2')">{{ getStg2Comments(cat.control) }}</textarea>
+                          </td>
+                        </tr>
+                      </ng-template>
+                    </ng-container>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>              
+              <div>Director’s Report & FS Format</div>
+            </ng-template>
+            <div class="card">
+              <div class="card-body">
+                <table class="bc-table" style="width: 100% !important;">
+                  <thead>
+                    <tr>
+                      <th style="width: 5%;">#</th>
+                      <th style="width: 40%;">Requirements</th>
+                      <th [attr.colspan]="3" style="width: 15%;">In Compliance?</th>
+                      <th style="width: 40%;">Brief Justification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let cat of stg2HeaderRowItems; let i = index">
+                      <ng-container *ngIf="getItemsByCategory(cat.category).length > 1; else singleItem">
+                        <tr class="category-row">
+                          <td>{{ cat.qid }}</td>
+                          <td [attr.colspan]="4">                    
+                            {{ cat.header }}
+                          </td>
+                        </tr>
+                        <ng-container *ngFor="let item of getItemsByCategory(cat.category);let j = index">
+                          <tr>
+                            <td>{{item.qid}}</td>
+                            <td>{{ item.question }}</td>                            
+                            <td>
+                              <input type="radio" name="{{ item.control }}" value="Yes" [checked]="item.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(item, 'Yes', 'Stage2')"> Yes
+                            </td>
+                              <td>
+                              <input type="radio" name="{{ item.control }}" value="No" [checked]="item.default === 'No' ? true : null" (click)="updateSelectedOptiones(item, 'No', 'Stage2')"> No
+                            </td>
+                              <td>
+                              <input type="radio" name="{{ item.control }}" value="NA" [checked]="item.default === 'NA' ? true : null" (click)="updateSelectedOptiones(item, 'NA', 'Stage2')"> N/A
+                            </td>
+                            <td><textarea name="{{ item.control }}" placeholder="Enter your text here..." 
+                              (change)="updateStgComments(item, $event.target, 'Stage2')">{{ getStg2Comments(item.control) }}</textarea>
+                            </td>
+                          </tr>
+                        </ng-container>
+                      </ng-container>
+                      <ng-template #singleItem>
+                        <tr>
+                          <td>{{ cat.qid }}</td>
+                          <td>                   
+                            {{ cat.header }}
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="Yes" [checked]="cat.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(cat, 'Yes', 'Stage2')"> Yes
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="No" [checked]="cat.default === 'No' ? true : null" (click)="updateSelectedOptiones(cat, 'No', 'Stage2')"> No
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="NA" [checked]="cat.default === 'NA' ? true : null" (click)="updateSelectedOptiones(cat, 'NA', 'Stage2')"> N/A
+                          </td>
+                          <td><textarea name="{{ cat.control }}" placeholder="Enter your text here..." (change)="updateStgComments(cat, $event.target, 'Stage2')">{{ getStg2Comments(cat.control) }}</textarea>
+                          </td>
+                        </tr>
+                      </ng-template>
+                    </ng-container>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab *ngIf="tabEYIndex == tabEY.FSTOKPMG">
+            <ng-template mat-tab-label>              
+              <div>FS Preparer Observation Points</div>
+            </ng-template>
+            <div class="card">
+              <div class="card-body">
+                <table class="bc-table" style="width: 100% !important;">
+                  <thead>
+                    <tr>
+                      <th style="width: 5%;">#</th>
+                      <th style="width: 40%;">Requirements</th>
+                      <th [attr.colspan]="3" style="width: 15%;">In Compliance?</th>
+                      <th style="width: 40%;">Brief Justification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let cat of stg2HeaderRowItems; let i = index">
+                      <ng-container *ngIf="getItemsByCategory(cat.category).length > 1; else singleItem">
+                        <tr class="category-row">
+                          <td>{{ cat.qid }}</td>
+                          <td [attr.colspan]="4">                    
+                            {{ cat.header }}
+                          </td>
+                        </tr>
+                        <ng-container *ngFor="let item of getItemsByCategory(cat.category);let j = index">
+                          <tr>
+                            <td>{{item.qid}}</td>
+                            <td>{{ item.question }}</td>                            
+                            <td>
+                              <input type="radio" name="{{ item.control }}" value="Yes" [checked]="item.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(item, 'Yes', 'Stage2')"> Yes
+                            </td>
+                              <td>
+                              <input type="radio" name="{{ item.control }}" value="No" [checked]="item.default === 'No' ? true : null" (click)="updateSelectedOptiones(item, 'No', 'Stage2')"> No
+                            </td>
+                              <td>
+                              <input type="radio" name="{{ item.control }}" value="NA" [checked]="item.default === 'NA' ? true : null" (click)="updateSelectedOptiones(item, 'NA', 'Stage2')"> N/A
+                            </td>
+                            <td><textarea name="{{ item.control }}" placeholder="Enter your text here..." 
+                              (change)="updateStgComments(item, $event.target, 'Stage2')">{{ getStg2Comments(item.control) }}</textarea>
+                            </td>
+                          </tr>
+                        </ng-container>
+                      </ng-container>
+                      <ng-template #singleItem>
+                        <tr>
+                          <td>{{ cat.qid }}</td>
+                          <td>                   
+                            {{ cat.header }}
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="Yes" [checked]="cat.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(cat, 'Yes', 'Stage2')"> Yes
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="No" [checked]="cat.default === 'No' ? true : null" (click)="updateSelectedOptiones(cat, 'No', 'Stage2')"> No
+                          </td>
+                          <td>
+                            <input type="radio" name="{{ cat.control }}" value="NA" [checked]="cat.default === 'NA' ? true : null" (click)="updateSelectedOptiones(cat, 'NA', 'Stage2')"> N/A
+                          </td>
+                          <td><textarea name="{{ cat.control }}" placeholder="Enter your text here..." (change)="updateStgComments(cat, $event.target, 'Stage2')">{{ getStg2Comments(cat.control) }}</textarea>
+                          </td>
+                        </tr>
+                      </ng-template>
+                    </ng-container>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+        <div>Kindly fill out the “Response” column with “Yes” if in compliance, “No” if not in compliance, and “N/A” if not applicable. 
+          For items marked as “No” or “N/A”, kindly indicate a brief justification in the space provided.
+        </div>
+        <div class="col-md-auto" *ngIf="ifStage2 && ifStage2Active && selectedItem.Stage2CurrentState == ey.EYFS">
+          <button class="btn btn-submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) 
+          && (isGSTeamMember || isSuperuser || isEYTeamMember)" (click)="stage2ConvertToJson()">
+            Confirm
+          </button>
+        </div>
+        <div class="col-md-auto" *ngIf="ifStage2 && ifStage2Active && selectedItem.Stage2CurrentState == ey.FSTOKPMG">
+          <button class="btn btn-submit" *ngIf="selectedItem.CurrentStage == stages.Stage2 && (selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft) 
+          && (isGSTeamMember || isSuperuser)" (click)="stage2ConvertToJson()">
+            Confirm
+          </button>
+        </div>
+        
+      
+    </div>
+  </ng-template>
+
+  <ng-template #stg3content let-c="close" let-d="dismiss">
+    <div class="modal-header" style="width:1140px;">
+        <h2 class="fw-bolder" style="font-size: 1.5rem;">FS Check List</h2>
+        <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="modal-body scroll-y">  
+      <div class="card">
+        <div class="card-body">
+          <table class="bc-table" style="width: 100% !important;">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 40%;">Requirements</th>
+                <th [attr.colspan]="3" style="width: 15%;">In Compliance?</th>
+                <th style="width: 40%;">Brief Justification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let cat of stg3HeaderRowItems; let i = index">
+                <ng-container *ngIf="getItemsByCategory(cat.category).length > 1; else singleItem">
+                  <tr class="category-row">
+                    <td>{{ cat.qid }}</td>
+                    <td [attr.colspan]="4">                    
+                      {{ cat.header }}
+                    </td>
+                  </tr>
+                  <ng-container *ngFor="let item of getStg3ItemsByCategory(cat.category);let j = index">
+                    <tr>
+                      <td>{{item.qid}}</td>
+                      <td>{{ item.question }}</td>                            
+                      <td>
+                        <input type="radio" name="{{ item.control }}" value="Yes" [checked]="item.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(item, 'Yes', 'Stage3')"> Yes
+                      </td>
+                        <td>
+                        <input type="radio" name="{{ item.control }}" value="No" [checked]="item.default === 'No' ? true : null" (click)="updateSelectedOptiones(item, 'No', 'Stage3')"> No
+                      </td>
+                        <td>
+                        <input type="radio" name="{{ item.control }}" value="NA" [checked]="item.default === 'NA' ? true : null" (click)="updateSelectedOptiones(item, 'NA', 'Stage3')"> N/A
+                      </td>
+                      <td><textarea name="{{ item.control }}" placeholder="Enter your text here..." (change)="updateStgComments(item, $event.target, 'Stage3')">{{ getStg3Comments(item.control) }}</textarea>
+                      </td>
+                    </tr>
+                  </ng-container>
+                </ng-container>
+                <ng-template #singleItem>
+                  <tr>
+                    <td>{{ cat.qid }}</td>
+                    <td>                   
+                      {{ cat.header }}
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="Yes" [checked]="cat.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(cat, 'Yes', 'Stage3')"> Yes
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="No" [checked]="cat.default === 'No' ? true : null" (click)="updateSelectedOptiones(cat, 'No', 'Stage3')"> No
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="NA" [checked]="cat.default === 'NA' ? true : null" (click)="updateSelectedOptiones(cat, 'NA', 'Stage3')"> N/A
+                    </td>
+                    <td><textarea name="{{ cat.control }}" placeholder="Enter your text here..." (change)="updateStgComments(cat, $event.target, 'Stage3')">{{ getStg3Comments(cat.control) }}</textarea>
+                    </td>
+                  </tr>
+                </ng-template>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>Kindly fill out the “Response” column with “Yes” if in compliance, “No” if not in compliance, and “N/A” if not applicable. 
+        For items marked as “No” or “N/A”, kindly indicate a brief justification in the space provided.
+      </div>
+      <div class="row" style="margin-top: 20px;" *ngIf="ifStage3 && ifStage3Active && selectedItem.Stage3CurrentState == kpmg.Manager">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+          <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && (selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft || selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.ReqIteration) 
+          && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="stage3ConvertToJson()">
+          Confirm
+          </button>         
+        </div>
+      </div>
+  
+      <div class="row" style="margin-top: 20px;" *ngIf="ifStage3 && ifStage3Active && selectedItem.Stage3CurrentState == kpmg.Director">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+          <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && (selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft || selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.ReqIteration) 
+          && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="stage3ConvertToJson()">
+          Confirm
+          </button>         
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 20px;" *ngIf="ifStage3 && ifStage3Active && selectedItem.Stage3CurrentState == kpmg.Final">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 " style="text-align: right;">
+          <button type="submit" *ngIf="selectedItem.CurrentStage == stages.Stage3 && (selectedItem.CurrentStatus == status.Rejected || selectedItem.CurrentStatus == status.Draft || selectedItem.CurrentStatus == status.Submitted || selectedItem.CurrentStatus == status.ReqIteration) 
+          && (isGSTeamMember || isSuperuser)" class="btn btn-submit" (click)="stage3ConvertToJson()">
+          Confirm
+          </button>         
+        </div>
+      </div>
+
+    </div>
+  </ng-template>
+
+  <ng-template #stg4content let-c="close" let-d="dismiss">
+    <div class="modal-header" style="width:1140px;">
+        <h2 class="fw-bolder" style="font-size: 1.5rem;">FS Check List</h2>
+        <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="modal-body scroll-y">  
+      <div class="card">
+        <div class="card-body">
+          <table class="bc-table" style="width: 100% !important;">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 40%;">Requirements</th>
+                <th [attr.colspan]="3" style="width: 15%;">In Compliance?</th>
+                <th style="width: 40%;">Brief Justification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let cat of stg4HeaderRowItems; let i = index">
+                <ng-container *ngIf="getStg4ItemsByCategory(cat.category).length > 1; else singleItem">
+                  <tr class="category-row">
+                    <td>{{ cat.qid }}</td>
+                    <td [attr.colspan]="4">                    
+                      {{ cat.header }}
+                    </td>
+                  </tr>
+                  <ng-container *ngFor="let item of getStg4ItemsByCategory(cat.category);let j = index">
+                    <tr>
+                      <td>{{item.qid}}</td>
+                      <td>{{ item.question }}</td>                            
+                      <td>
+                        <input type="radio" name="{{ item.control }}" value="Yes" [checked]="item.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(item, 'Yes', 'Stage4')"> Yes
+                      </td>
+                        <td>
+                        <input type="radio" name="{{ item.control }}" value="No" [checked]="item.default === 'No' ? true : null" (click)="updateSelectedOptiones(item, 'No', 'Stage4')"> No
+                      </td>
+                        <td>
+                        <input type="radio" name="{{ item.control }}" value="NA" [checked]="item.default === 'NA' ? true : null" (click)="updateSelectedOptiones(item, 'NA', 'Stage4')"> N/A
+                      </td>
+                      <td><textarea name="{{ item.control }}" placeholder="Enter your text here..." (change)="updateStgComments(item, $event.target, 'Stage4')">{{ getStg4Comments(item.control) }}</textarea>
+                      </td>
+                    </tr>
+                  </ng-container>
+                </ng-container>
+                <ng-template #singleItem>
+                  <tr>
+                    <td>{{ cat.qid }}</td>
+                    <td>                   
+                      {{ cat.header }}
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="Yes" [checked]="cat.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(cat, 'Yes', 'Stage4')"> Yes
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="No" [checked]="cat.default === 'No' ? true : null" (click)="updateSelectedOptiones(cat, 'No', 'Stage4')"> No
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="NA" [checked]="cat.default === 'NA' ? true : null" (click)="updateSelectedOptiones(cat, 'NA', 'Stage4')"> N/A
+                    </td>
+                    <td><textarea name="{{ cat.control }}" placeholder="Enter your text here..." (change)="updateStgComments(cat, $event.target, 'Stage4')">{{ getStg4Comments(cat.control) }}</textarea>
+                    </td>
+                  </tr>
+                </ng-template>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>Kindly fill out the “Response” column with “Yes” if in compliance, “No” if not in compliance, and “N/A” if not applicable. 
+        For items marked as “No” or “N/A”, kindly indicate a brief justification in the space provided.
+      </div>
+      <button class="btn btn-submit" (click)="stage4ConvertToJson()">Confirm</button>
+      
+    </div>
+  </ng-template>
+
+  <ng-template #stg5content let-c="close" let-d="dismiss">
+    <div class="modal-header" style="width:1140px;">
+        <h2 class="fw-bolder" style="font-size: 1.5rem;">FS Check List</h2>
+        <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+            <span class="svg-icon svg-icon-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="modal-body scroll-y">  
+      <div class="card">
+        <div class="card-body">
+          <table class="bc-table" style="width: 100% !important;">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 40%;">Requirements</th>
+                <th [attr.colspan]="3" style="width: 15%;">In Compliance?</th>
+                <th style="width: 40%;">Brief Justification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let cat of stg5HeaderRowItems; let i = index">
+                <ng-container *ngIf="getStg5ItemsByCategory(cat.category).length > 1; else singleItem">
+                  <tr class="category-row">
+                    <td>{{ cat.qid }}</td>
+                    <td [attr.colspan]="4">                    
+                      {{ cat.header }}
+                    </td>
+                  </tr>
+                  <ng-container *ngFor="let item of getStg5ItemsByCategory(cat.category);let j = index">
+                    <tr>
+                      <td>{{item.qid}}</td>
+                      <td>{{ item.question }}</td>                            
+                      <td>
+                        <input type="radio" name="{{ item.control }}" value="Yes" [checked]="item.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(item, 'Yes', 'Stage5')"> Yes
+                      </td>
+                        <td>
+                        <input type="radio" name="{{ item.control }}" value="No" [checked]="item.default === 'No' ? true : null" (click)="updateSelectedOptiones(item, 'No', 'Stage5')"> No
+                      </td>
+                        <td>
+                        <input type="radio" name="{{ item.control }}" value="NA" [checked]="item.default === 'NA' ? true : null" (click)="updateSelectedOptiones(item, 'NA', 'Stage5')"> N/A
+                      </td>
+                      <td><textarea name="{{ item.control }}" placeholder="Enter your text here..." (change)="updateStgComments(item, $event.target, 'Stage5')">{{ getStg5Comments(item.control) }}</textarea>
+                      </td>
+                    </tr>
+                  </ng-container>
+                </ng-container>
+                <ng-template #singleItem>
+                  <tr>
+                    <td>{{ cat.qid }}</td>
+                    <td>                   
+                      {{ cat.header }}
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="Yes" [checked]="cat.default === 'Yes' ? true : null" (click)="updateSelectedOptiones(cat, 'Yes', 'Stage5')"> Yes
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="No" [checked]="cat.default === 'No' ? true : null" (click)="updateSelectedOptiones(cat, 'No', 'Stage5')"> No
+                    </td>
+                    <td>
+                      <input type="radio" name="{{ cat.control }}" value="NA" [checked]="cat.default === 'NA' ? true : null" (click)="updateSelectedOptiones(cat, 'NA', 'Stage5')"> N/A
+                    </td>
+                    <td><textarea name="{{ cat.control }}" placeholder="Enter your text here..." (change)="updateStgComments(cat, $event.target, 'Stage5')">{{ getStg5Comments(cat.control) }}</textarea>
+                    </td>
+                  </tr>
+                </ng-template>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>Kindly fill out the “Response” column with “Yes” if in compliance, “No” if not in compliance, and “N/A” if not applicable. 
+        For items marked as “No” or “N/A”, kindly indicate a brief justification in the space provided.
+      </div>
+      <button class="btn btn-submit" (click)="stage5ConvertToJson()">Confirm</button>
+      
+    </div>
+  </ng-template>
+
+   

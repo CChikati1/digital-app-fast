@@ -1,0 +1,937 @@
+<div class="row">    
+    <div class="row" style="margin-bottom: 10px;float: right;">
+        <div style="width: 82%;"></div>
+                <label style="float:right;width: 8%;padding: 5px 0px 0px 24px;" class="control-label">Select Year</label>
+                <select style="width:10%" class="custom-select" (change)="selectChangeHandler($event)">
+                    <option value="" disabled>Select Year</option> 
+                    <option value="2024" selected>2024</option>                   
+                    <option value="2023" >2023</option>
+                    <option value="2022" >2022</option>
+                    <option value="2021">2021</option>
+                 </select>
+          <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-1">
+          </div> -->
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+       <div class="card card-shadow p-2 secondaryColor1 text-align-center header">
+           <div class="card-body whiteFont" style="padding:1em 3em" (click)="onStageFilter(stages.Stage1)">
+               <h4>{{stage1}} / {{total}}</h4>
+               <h5>Data Preparation & Submission</h5>
+           </div>
+           <mat-icon>menu</mat-icon>
+           <div style="background-color: white;padding: 0.50rem 0rem;border-radius: 0 2rem;">
+               <div class="row client-border-card">
+                   <div class="col-6 text-center client-border secondaryColor1Text" (click)="onStageStatusFilter(stages.Stage1,status.Approved)">
+                       <h5>{{stage1approved}}</h5>
+                       <h6>Approved</h6>
+                   </div>                    
+                   <div class="col-6 text-center client-border-rt secondaryColor1Text" (click)="onStageStatusFilter(stages.Stage1,status.Underreview)">
+                       <h5>{{stage1UR}}</h5>
+                       <h6>Under Review</h6>
+                   </div>
+               </div>
+               <div class="row client-border-card-bt">
+                   <div class="col-6 text-center client-border secondaryColor1Text" (click)="onStageStatusFilter(stages.Stage1,status.Submitted)">
+                       <h5>{{stage1submit}}</h5>
+                       <h6>Submitted</h6>
+                   </div>
+                   <div class="col-6 text-center client-border-rt secondaryColor1Text" (click)="onStageStatusFilter(stages.Stage1,status.Rejected)">
+                       <h5>{{stage1rejected}}</h5>
+                       <h6>Rejected</h6>
+                   </div>
+               </div>
+               <div class="row client-border-card-bt">
+                   <div class="col-6 text-center client-border secondaryColor1Text" (click)="onStageStatusFilter(stages.Stage1,status.OverDue)">
+                       <h5>{{stage1overdue}}</h5>
+                       <h6>Overdue</h6>
+                   </div>
+                   <div class="col-6 text-center client-border-rt secondaryColor1Text" (click)="onStageStatusFilter(stages.Stage1,status.NotYetDue)">
+                       <h5>{{stage1notdue}}</h5>
+                       <h6>Not yet due</h6>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+       <div class="card card-shadow p-2 secondaryColor2 text-align-center header">
+           <div class="card-body whiteFont" style="padding:1em 3em" (click)="onStageFilter(stages.Stage2)">
+               <h4>{{stage2}} / {{total}}</h4>
+               <h5>FS Preparation & Review</h5>
+           </div>
+           <mat-icon>assignment</mat-icon>
+           <div style="background-color: white;padding: 0.50rem 0rem;border-radius: 0 2rem;">
+               <div class="row client-border-card">
+                   <div class="col-6 text-center client-border secondaryColor2Text" (click)="onStageStatusFilter(stages.Stage2,status.Approved)">
+                       <h5>{{stage2approved}}</h5>
+                       <h6>Approved</h6>
+                   </div>                    
+                   <div class="col-6 text-center client-border-rt secondaryColor2Text" (click)="onStageStatusFilter(stages.Stage2,status.Underreview)">
+                       <h5>{{stage2UR}}</h5>
+                       <h6>Under Review</h6>
+                   </div>
+               </div>
+               <div class="row client-border-card-bt">
+                   <div class="col-6 text-center client-border secondaryColor2Text" (click)="onStageStatusFilter(stages.Stage2,status.Submitted)">
+                       <h5>{{stage2submit}}</h5>
+                       <h6>Submitted</h6>
+                   </div>
+                   <div class="col-6 text-center client-border-rt secondaryColor2Text" (click)="onStageStatusFilter(stages.Stage2,status.Rejected)">
+                       <h5>{{stage2rejected}}</h5>
+                       <h6>Rejected</h6>
+                   </div>
+               </div>
+               <div class="row client-border-card-bt">
+                   <div class="col-6 text-center client-border secondaryColor2Text" (click)="onStageStatusFilter(stages.Stage2,status.OverDue)">
+                       <h5>{{stage2overdue}}</h5>
+                       <h6>Overdue</h6>
+                   </div>
+                   <div class="col-6 text-center client-border-rt secondaryColor2Text" (click)="onStageStatusFilter(stages.Stage2,status.NotYetDue)">
+                       <h5>{{stage2notdue}}</h5>
+                       <h6>Not yet due</h6>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+       <div class="card card-shadow p-2 secondaryColor3 text-align-center header">
+           <div class="card-body whiteFont" style="padding:1em 3em" (click)="onStageFilter(stages.Stage3)">
+               <h4>{{stage3}} / {{total}}</h4>
+               <h5>Audit Reviews and Clearance</h5>
+           </div>
+           <mat-icon>assignment_ind</mat-icon>
+           <div style="background-color: white;padding: 0.50rem 0rem;border-radius: 0 2rem;">
+               <div class="row client-border-card">
+                   <div class="col-6 text-center client-border secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage3,status.Approved)">
+                       <h5>{{stage3approved}}</h5>
+                       <h6>Approved</h6>
+                   </div>                    
+                   <div class="col-6 text-center client-border-rt secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage3,status.Underreview)">
+                       <h5>{{stage3UR}}</h5>
+                       <h6>Under Review</h6>
+                   </div>
+               </div>
+               <div class="row client-border-card-bt">
+                   <div class="col-6 text-center client-border secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage3,status.Submitted)">
+                       <h5>{{stage3submit}}</h5>
+                       <h6>Submitted</h6>
+                   </div>
+                   <div class="col-6 text-center client-border-rt secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage3,status.Rejected)">
+                       <h5>{{stage3rejected}}</h5>
+                       <h6>Rejected</h6>
+                   </div>
+               </div>
+               <div class="row client-border-card-bt">
+                   <div class="col-6 text-center client-border secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage3,status.OverDue)">
+                       <h5>{{stage3overdue}}</h5>
+                       <h6>Overdue</h6>
+                   </div>
+                   <div class="col-6 text-center client-border-rt secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage3,status.NotYetDue)">
+                       <h5>{{stage3notdue}}</h5>
+                       <h6>Not yet due</h6>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+       <div class="card card-shadow p-2 secondaryColor4 text-align-center header">
+           <div class="card-body whiteFont" style="padding:1em 3em" (click)="onStageFilter(stages.Stage4)">
+               <h4>{{stage4}} / {{total}}</h4>
+               <h5>FS Sign-off and Archiving</h5>
+           </div>
+           <mat-icon>people_outline</mat-icon>
+           <div style="background-color: white;padding: 0.50rem 0rem;border-radius: 0 2rem;">
+               <div class="row client-border-card">
+                   <div class="col-6 text-center client-border secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage4,status.Approved)">
+                       <h5>{{stage4approved}}</h5>
+                       <h6>Approved</h6>
+                   </div>                    
+                   <div class="col-6 text-center client-border-rt secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage4,status.Underreview)">
+                       <h5>{{stage4UR}}</h5>
+                       <h6>Under Review</h6>
+                   </div>
+               </div>
+               <div class="row client-border-card-bt">
+                   <div class="col-6 text-center client-border secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage4,status.Submitted)">
+                       <h5>{{stage4submit}}</h5>
+                       <h6>Submitted</h6>
+                   </div>
+                   <div class="col-6 text-center client-border-rt secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage4,status.Rejected)">
+                       <h5>{{stage4rejected}}</h5>
+                       <h6>Rejected</h6>
+                   </div>
+               </div>
+               <div class="row client-border-card-bt">
+                   <div class="col-6 text-center client-border secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage4,status.OverDue)">
+                       <h5>{{stage4overdue}}</h5>
+                       <h6>Overdue</h6>
+                   </div>
+                   <div class="col-6 text-center client-border-rt secondaryColor3Text" (click)="onStageStatusFilter(stages.Stage4,status.NotYetDue)">
+                       <h5>{{stage4notdue}}</h5>
+                       <h6>Not yet due</h6>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+
+<div class="row" style="margin-bottom: 30px;">
+   <div class="col-xl-2 col-sm-12 col-12">            
+       <div class="card other-card" (click)="onCategoryFilter('Critical')">
+           <div class="card-body">
+               <div class="row">
+                   <div class="col">
+                       <div class="h5 font-bold mb-0">Critical - {{Critical}}</div>
+                   </div>
+                   <div class="col-auto">
+                       <div class="icon icon-shape bg-tertiary bg-color1 text-white text-lg rounded-circle">
+                           <i class="bi bi-credit-card"></i>
+                       </div>
+                   </div>
+               </div>
+               <div class="mt-2 mb-0 text-sm">
+                   <span class="badge badge-pill bg-soft-success text-success me-2">
+                       <i class="bi bi-arrow-up me-1"></i>{{CriticalOntrack}}</span>
+                       <span class="text-nowrap text-xs text-muted">On-track</span>
+                       <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                           <i class="bi bi-arrow-down me-1"></i>- {{CriticalDelayed}}</span>
+                           <span class="text-nowrap text-xs text-muted">Delayed</span>
+                   </div>
+               </div>
+       </div>
+   </div>
+   <div class="col-xl-2 col-sm-12 col-12">            
+       <div class="card other-card" (click)="onCategoryFilter('Non-Critical')">
+           <div class="card-body">
+               <div class="row">
+                   <div class="col">
+                       <div class="h5 font-bold mb-0">Non-Critical - {{NonCritical}}</div>
+                   </div>
+                   <div class="col-auto">
+                       <div class="icon icon-shape bg-tertiary bg-color2 text-white text-lg rounded-circle">
+                           <i class="bi bi-credit-card"></i>
+                       </div>
+                   </div>
+               </div>
+               <div class="mt-2 mb-0 text-sm">
+                   <span class="badge badge-pill bg-soft-success text-success me-2">
+                       <i class="bi bi-arrow-up me-1"></i>{{NonCriticalOntrack}}</span>
+                       <span class="text-nowrap text-xs text-muted">On-track</span>
+                       <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                           <i class="bi bi-arrow-down me-1"></i>- {{NonCriticalDelayed}}</span>
+                           <span class="text-nowrap text-xs text-muted">Delayed</span>
+                   </div>
+               </div>
+       </div>
+   </div>
+   <div class="col-xl-2 col-sm-12 col-12">            
+       <div class="card other-card" (click)="onBUFilter('Corporate')">
+           <div class="card-body">
+               <div class="row">
+                   <div class="col">
+                       <div class="h5 font-bold mb-0">Corporate - {{Corporate}}</div>                        
+                   </div>
+                   <div class="col-auto">
+                       <div class="icon icon-shape bg-tertiary bg-color3 text-white text-lg rounded-circle">
+                           <i class="bi bi-people"></i>
+                       </div>
+                   </div>
+               </div>
+               <div class="mt-2 mb-0 text-sm">
+                   <span class="badge badge-pill bg-soft-success text-success me-2">
+                       <i class="bi bi-arrow-up me-1"></i>{{CorporateOntrack}}</span>
+                       <span class="text-nowrap text-xs text-muted">On-track</span>
+                       <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                           <i class="bi bi-arrow-down me-1"></i>-{{CorporateDelayed}} </span>
+                           <span class="text-nowrap text-xs text-muted">Delayed</span>
+                   </div>
+           </div>
+       </div>
+   </div>
+   <div class="col-xl-2 col-sm-12 col-12">            
+       <div class="card other-card" (click)="onBUFilter('SMBU')">
+           <div class="card-body">
+               <div class="row">
+                   <div class="col">
+                       <div class="h5 font-bold mb-0">SMBU - {{SMBU}}</div>
+                       
+                   </div>
+                   <div class="col-auto">
+                       <div class="icon icon-shape bg-tertiary bg-color4 text-white text-lg rounded-circle">
+                           <i class="bi bi-clock-history"></i>
+                       </div>
+                   </div>
+               </div>
+               <div class="mt-2 mb-0 text-sm">
+                   <span class="badge badge-pill bg-soft-success text-success me-2">
+                       <i class="bi bi-arrow-up me-1"></i>{{SMBUOntrack}}</span>
+                       <span class="text-nowrap text-xs text-muted">On-track</span>
+                       <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                           <i class="bi bi-arrow-down me-1"></i>- {{SMBUDelayed}}</span>
+                           <span class="text-nowrap text-xs text-muted">Delayed</span>
+                   </div>
+           </div>
+       </div>
+   </div>
+   <div class="col-xl-2 col-sm-12 col-12">            
+       <div class="card other-card" (click)="onBUFilter('CBU')">
+           <div class="card-body">
+               <div class="row">
+                   <div class="col">
+                       <div class="h5 font-bold mb-0">CBU - {{CBU}}</div>
+                       
+                   </div>
+                   <div class="col-auto">
+                       <div class="icon icon-shape bg-tertiary bg-color5 text-white text-lg rounded-circle">
+                           <i class="bi bi-minecart-loaded"></i>
+                       </div>
+                   </div>
+               </div>
+               <div class="mt-2 mb-0 text-sm">
+                   <span class="badge badge-pill bg-soft-success text-success me-2">
+                       <i class="bi bi-arrow-up me-1"></i>{{CBUOntrack}}</span>
+                       <span class="text-nowrap text-xs text-muted">On-track</span>
+                       <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                           <i class="bi bi-arrow-down me-1"></i>- {{CBUDelayed}}</span>
+                           <span class="text-nowrap text-xs text-muted">Delayed</span>
+                   </div>
+           </div>
+       </div>
+   </div>
+   <div class="col-xl-2 col-sm-12 col-12">            
+       <div class="card other-card" (click)="onBUFilter('HBU')">
+           <div class="card-body">
+               <div class="row">
+                   <div class="col">
+                       <div class="h5 font-bold mb-0">HBU - {{HBU}}</div>
+                    
+                   </div>
+                   <div class="col-auto">
+                       <div class="icon icon-shape bg-tertiary bg-color6 text-white text-lg rounded-circle">
+                           <i class="bi bi-credit-card"></i>
+                       </div>
+                   </div>
+               </div>
+               <div class="mt-2 mb-0 text-sm">
+                   <span class="badge badge-pill bg-soft-success text-success me-2">
+                       <i class="bi bi-arrow-up me-1"></i>{{HBUOntrack}}</span>
+                       <span class="text-nowrap text-xs text-muted">On-track</span>
+                       <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                           <i class="bi bi-arrow-down me-1"></i>- {{HBUDelayed}}</span>
+                           <span class="text-nowrap text-xs text-muted">Delayed</span>
+                   </div>
+           </div>
+       </div>
+   </div>
+</div>
+
+
+   <div class="row">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="card card-shadow" style="border-top: 4px solid #00B1B0;">
+               <div class="card-header">
+               <h5><img src="./assets/image/list.png" style="width: 22px;margin-right: 10px;">Assigned to you</h5>
+                   <div class="card-header-right ">
+                       <div class="btn-group btn-group-toggle" style="margin: 0 !important;">
+                           <label class="btn btn-outline-secondary active" style="padding: 0.25rem 0.75rem;" (click)="onCategoryFilter('All')">View All</label>                              
+                       </div>
+                   </div>
+               </div>
+               <div class="card-body p-0">
+       
+       <table id="tblMyPendingData" class="bc-table" style="width: 100% !important;">
+                               <thead>
+                                   <tr>
+                                       <th>Preparer</th>
+                                       <th>Category</th>
+                                       <th>Entity Code</th>
+                                       <th>Entities</th>
+                                       <th>Business Unit</th>
+                                       <th>Target Date</th>
+                                       <th>Stage</th>
+                                       <th>Due Date</th>
+                                       <th>Status</th>
+                                       <th>Action Holder</th>
+                                       <th>Action</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr style="cursor: pointer;"
+                                       *ngFor="let item of tableData">
+                                       <td>
+                                           <div class="d-flex align-items-center">
+                                               <div class="avatar avatar-l">
+                                                   <div *ngIf="item.Preparer != null" class="avatar-name rounded-circle"><span>{{item.Preparer.charAt(0).toUpperCase()}}</span></div>
+                                               </div>
+                                               <h6 class="mb-0 ms-3 text-900">{{item.Preparer}}</h6>
+                                           </div>
+                                       </td>
+                                       <td>{{item.Category}}</td>
+                                       <td>{{item.Title}}</td>
+                                       <td>{{item.EntityName}}</td>
+                                       <td>{{item.BusinessUnit}}</td>
+                                       <td>{{item.TargetFSCompletionDate | date: 'dd-MM-yyyy'}}</td>                                        
+                                       <td>
+                                           <div *ngIf="item.CurrentStage == stages.Stage1 || item.CurrentStage == stages.Stage4 || item.CurrentStage == stages.Stage5">
+                                               {{item.CurrentStage}}
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage2">
+                                               {{item.Stage2CurrentState}}                                                
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage3">
+                                               {{item.Stage3CurrentState}}                                                
+                                           </div>
+                                       </td>
+
+                                       <td>
+                                           <div *ngIf="item.CurrentStage == stages.Stage1">
+                                               {{item.Stage1Deadline | date: 'dd-MM-yyyy'}}
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage2">
+                                               <div *ngIf="item.Stage2CurrentState == ey.EYFS">
+                                                   {{item.Stage2Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                               <div *ngIf="item.Stage2CurrentState == ey.FSTOKPMG">
+                                                   {{item.Stage21Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage3">
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Manager">
+                                                   {{item.Stage31Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Director">
+                                                   {{item.Stage32Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Final">
+                                                   {{item.Stage33Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage4">
+                                               {{item.Stage4SubmissionDate | date: 'dd-MM-yyyy'}}
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage5">
+                                               {{item.Stage5SubmissionDate | date: 'dd-MM-yyyy'}}
+                                           </div>
+                                       </td>
+                                       <td class="text-start status">
+                                           <div *ngIf="item.CurrentStage == stages.Stage1">
+                                               <span class="badge fs--1 badge-light-{{item.Stage1Status}}">{{item.Stage1Status}}<svg
+                                                   class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                   focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                   <path fill="currentColor"
+                                                       d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                   </path>
+                                               </svg>
+                                               </span>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage2">
+                                               <div *ngIf="item.Stage2CurrentState == ey.EYFS">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage2Status}}">{{item.Stage2Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                   </svg>
+                                               </span>
+                                               </div>
+                                               <div *ngIf="item.Stage2CurrentState == ey.FSTOKPMG">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage21Status}}">{{item.Stage21Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                       </svg>
+                                                   </span>
+                                               </div>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage3">
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Manager">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage31Status}}">{{item.Stage31Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                   </svg>                                               
+                                               </span>
+                                               </div>
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Director">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage32Status}}">{{item.Stage32Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                   </svg>
+                                               </span>
+                                               </div>
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Final">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage33Status}}">{{item.Stage33Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                   </svg>
+                                               </span>
+                                               </div>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage4">
+                                               <span class="badge fs--1 badge-light-{{item.Stage4Status}}">{{item.Stage4Status}}<svg
+                                                   class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                   focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                   <path fill="currentColor"
+                                                       d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                   </path>
+                                               </svg>
+                                               </span>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage5">
+                                               <span class="badge fs--1 badge-light-{{item.Stage5Status}}">{{item.Stage5Status}}<svg
+                                                   class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                   focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                   <path fill="currentColor"
+                                                       d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                   </path>
+                                               </svg>
+                                               </span>
+                                           </div>
+                                       </td>
+                                       <td>{{item.ActionHolder}}</td>
+                                       <td style="width: 75px;">
+                                           <a *ngIf="item.CurrentStatus != 'Approved' && !isReadOnlyMember" class="dt-buttons" (click)="editPageRedirect(item)">                                                 
+                                               <div style="line-height: 1 !important;" class="btn btn-outline-dark">Edit</div>                                                
+                                           </a>
+                                           <a *ngIf="item.CurrentStatus == 'Approved' || isReadOnlyMember" class="dt-buttons" (click)="editPageRedirect(item)">                                                 
+                                               <div style="line-height: 1 !important;" class="btn btn-outline-dark">View</div>                                                
+                                           </a>
+                                       </td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
+                   </div>
+               </div>
+   </div>
+
+         
+   <div class="row">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="card card-shadow" style="border-top: 4px solid #0096D6;">
+               <div class="card-header">
+               <h5><img src="./assets/image/list.png" style="width: 22px;margin-right: 10px;">All Financial Statements</h5>
+                   <div class="card-header-right ">
+                       <div class="btn-group btn-group-toggle" style="margin: 0 !important;">
+                           <label *ngFor="let item of categoryType" class="btn btn-outline-secondary" 
+                           [ngClass]="{'active': selectedCategoryTab === item}" style="padding: 0.25rem 0.75rem;" (click)="onChangeCategory(item); selectedCategoryTab = item;">{{item}}</label>                              
+                       </div>
+                   </div>
+               </div>
+               <div class="card-body p-0">
+       
+       <table id="tblPendingData" class="bc-table" style="width: 100% !important;">
+                               <thead style="background-color: #B4975A!important;color: #fff!important;">
+                                   <tr>
+                                       <th>Preparer</th>
+                                       <th>Category</th>
+                                       <th>Entity Code</th>
+                                       <th>Entities</th>
+                                       <th>Business Unit</th>
+                                       <th>Target Date</th>
+                                       <th>Stage</th>
+                                       <th>Due Date</th>
+                                       <th>Status</th>
+                                       <th>Action Holder</th>
+                                       <th>Action</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr style="cursor: pointer;"
+                                       *ngFor="let item of tableDataAllFS">
+                                       <td>
+                                           <div class="d-flex align-items-center">
+                                               <div class="avatar avatar-l">
+                                                   <div *ngIf="item.Preparer != null" class="avatar-name rounded-circle"><span>{{item.Preparer.charAt(0).toUpperCase()}}</span></div>
+                                               </div>
+                                               <h6 class="mb-0 ms-3 text-900">{{item.Preparer}}</h6>
+                                           </div>
+                                       </td>
+                                       <td>{{item.Category}}</td>
+                                       <td>{{item.Title}}</td>
+                                       <td>{{item.EntityName}}</td>
+                                       <td>{{item.BusinessUnit}}</td>
+                                       <td>{{item.TargetFSCompletionDate | date: 'dd-MM-yyyy'}}</td>                                        
+                                       <td>
+                                           <div *ngIf="item.CurrentStage == stages.Stage1 || item.CurrentStage == stages.Stage4 || item.CurrentStage == stages.Stage5">
+                                               {{item.CurrentStage}}
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage2">
+                                               {{item.Stage2CurrentState}}                                                
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage3">
+                                               {{item.Stage3CurrentState}}                                                
+                                           </div>
+                                       </td>
+                                       <td>
+                                           
+                                           <div *ngIf="item.CurrentStage == stages.Stage1">
+                                               {{item.Stage1Deadline | date: 'dd-MM-yyyy'}}
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage2">
+                                               <div *ngIf="item.Stage2CurrentState == ey.EYFS">
+                                                   {{item.Stage2Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                               <div *ngIf="item.Stage2CurrentState == ey.FSTOKPMG">
+                                                   {{item.Stage21Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage3">
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Manager">
+                                                   {{item.Stage31Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Director">
+                                                   {{item.Stage32Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Final">
+                                                   {{item.Stage33Deadline | date: 'dd-MM-yyyy'}}
+                                               </div>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage4">
+                                               {{item.Stage4SubmissionDate | date: 'dd-MM-yyyy'}}
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage5">
+                                               {{item.Stage5SubmissionDate | date: 'dd-MM-yyyy'}}
+                                           </div>
+                                       </td>
+                                       <td class="text-start status">
+                                           <div *ngIf="item.CurrentStage == stages.Stage1">
+                                               <span class="badge fs--1 badge-light-{{item.Stage1Status}}">{{item.Stage1Status}}<svg
+                                                   class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                   focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                   <path fill="currentColor"
+                                                       d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                   </path>
+                                               </svg>
+                                               </span>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage2">
+                                               <div *ngIf="item.Stage2CurrentState == ey.EYFS">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage2Status}}">{{item.Stage2Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                   </svg>
+                                               </span>
+                                               </div>
+                                               <div *ngIf="item.Stage2CurrentState == ey.FSTOKPMG">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage21Status}}">{{item.Stage21Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                       </svg>
+                                                   </span>
+                                               </div>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage3">
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Manager">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage31Status}}">{{item.Stage31Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                   </svg>                                               
+                                               </span>
+                                               </div>
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Director">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage32Status}}">{{item.Stage32Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                   </svg>
+                                               </span>
+                                               </div>
+                                               <div *ngIf="item.Stage3CurrentState == kpmg.Final">
+                                                   <span class="badge fs--1 badge-light-{{item.Stage33Status}}">{{item.Stage33Status}}<svg
+                                                       class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                       focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                       <path fill="currentColor"
+                                                           d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                       </path>
+                                                   </svg>
+                                               </span>
+                                               </div>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage4">
+                                               <span class="badge fs--1 badge-light-{{item.Stage4Status}}">{{item.Stage4Status}}<svg
+                                                   class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                   focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                   <path fill="currentColor"
+                                                       d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                   </path>
+                                               </svg>
+                                               </span>
+                                           </div>
+                                           <div *ngIf="item.CurrentStage == stages.Stage5">
+                                               <span class="badge fs--1 badge-light-{{item.Stage5Status}}">{{item.Stage5Status}}<svg
+                                                   class="svg-inline--fa fa-uncheck fa-w-16 ms-2" aria-hidden="true"
+                                                   focusable="false" data-prefix="fas" data-icon="check" role="img"
+                                                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                                   <path fill="currentColor"
+                                                       d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+                                                   </path>
+                                               </svg>
+                                               </span>
+                                           </div>
+                                       </td>
+                                       <td>{{item.ActionHolder}}</td>
+                                       <td style="width: 75px;">
+                                           <a *ngIf="item.CurrentStatus != 'Approved' && isSuperuser" class="dt-buttons" (click)="editPageRedirect(item)">                                                 
+                                               <div style="line-height: 1 !important;" class="btn btn-outline-dark">Edit</div>                                                
+                                           </a>
+                                           <a *ngIf="item.CurrentStatus == 'Approved' || !isSuperuser" class="dt-buttons" (click)="editPageRedirect(item)">                                                 
+                                               <div style="line-height: 1 !important;" class="btn btn-outline-dark">View</div>                                                
+                                           </a>
+                                       </td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
+                   </div>
+               </div>
+   </div>
+   
+
+   <div class="row">       
+       <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+           <div class="card card-shadow">
+               <div class="card-header" style="border-top: 4px solid #31261D;">
+                   <h5>Recent Notifications</h5>
+                   <div class="card-header-right ">
+                       <i class="bi bi-three-dots"></i>
+                   </div>
+               </div>
+               <div class="card-body p-0">
+                   <table id="tblNotificationData" class="bc-table" style="width: 100% !important;">
+                       <thead style="background-color: #00B1B0!important;color: #fff;">
+                           <tr>
+                               <th>Entity Code</th>
+                               <th>Entity Name</th>
+                               <th>Email Type</th>
+                               <th></th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr style="cursor: pointer;"
+                               *ngFor="let item of tableNotificationData">
+                               
+                               <td>{{item.EntityCode}}</td>
+                               <td>{{item.Entity}}</td>
+                               <td>{{item.EmailType}}</td>
+                               <td>
+                                   <div class="label-format labelCritical" (click)="viewEmailPage(item,content2)">View</div>
+                               </td>
+                       </tbody>
+                   </table>
+               </div>
+   
+           </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+           <div class="card card-shadow">
+               <div class="card-header" style="border-top: 4px solid #31261D;">
+                   <h5>Overdue Financial Statements</h5>
+                   <div class="card-header-right ">
+                       <i class="bi bi-three-dots"></i>
+                   </div>
+               </div>
+               <div class="card-body p-0">
+                   <table id="tblOverdueData" class="bc-table" style="width: 100% !important;">
+                       <thead style="background-color: #00B1B0!important;color: #fff;">
+                           <tr>
+                               <th>Category</th>
+                               <th>Entities</th>
+                               <th>Stage</th>
+                               <th>Due Date</th>
+                               <th>Action Holder</th>                                
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr style="cursor: pointer;"
+                               *ngFor="let item of tableOverDueData">
+                               <td>
+                                   <div *ngIf="item.Category == 'Critical'" class="label-format labelCritical" (click)="editPageRedirect(item)">{{item.Category}}</div>
+                                   <div *ngIf="item.Category == 'Non-Critical'" class="label-format labelNonCritical" (click)="editPageRedirect(item)">{{item.Category}}</div>
+                               </td>
+                               <td>{{item.EntityName}}</td>
+                               <!-- <td>{{item.CurrentStage}}</td> -->
+                               <td>
+                                   <div *ngIf="item.CurrentStage == stages.Stage1 || item.CurrentStage == stages.Stage4 || item.CurrentStage == stages.Stage5">
+                                       {{item.CurrentStage}}
+                                   </div>
+                                   <div *ngIf="item.CurrentStage == stages.Stage2">
+                                       {{item.Stage2CurrentState}}                                                
+                                   </div>
+                                   <div *ngIf="item.CurrentStage == stages.Stage3">
+                                       {{item.Stage3CurrentState}}                                                
+                                   </div>
+                               </td>
+                               <td>
+                                   <!-- {{item.TargetFSCompletionDate | date: 'dd-MM-yyyy'}} -->
+                                   <div *ngIf="item.CurrentStage == stages.Stage1">
+                                       {{item.Stage1Deadline | date: 'dd-MM-yyyy'}}
+                                   </div>
+                                   <div *ngIf="item.CurrentStage == stages.Stage2">
+                                       <div *ngIf="item.Stage2CurrentState == ey.EYFS">
+                                           {{item.Stage2Deadline | date: 'dd-MM-yyyy'}}
+                                       </div>
+                                       <div *ngIf="item.Stage2CurrentState == ey.FSTOKPMG">
+                                           {{item.Stage21Deadline | date: 'dd-MM-yyyy'}}
+                                       </div>
+                                   </div>
+                                   <div *ngIf="item.CurrentStage == stages.Stage3">
+                                       <div *ngIf="item.Stage3CurrentState == kpmg.Manager">
+                                           {{item.Stage31Deadline | date: 'dd-MM-yyyy'}}
+                                       </div>
+                                       <div *ngIf="item.Stage3CurrentState == kpmg.Director">
+                                           {{item.Stage32Deadline | date: 'dd-MM-yyyy'}}
+                                       </div>
+                                       <div *ngIf="item.Stage3CurrentState == kpmg.Final">
+                                           {{item.Stage33Deadline | date: 'dd-MM-yyyy'}}
+                                       </div>
+                                   </div>
+                                   <div *ngIf="item.CurrentStage == stages.Stage4">
+                                       {{item.Stage4SubmissionDate | date: 'dd-MM-yyyy'}}
+                                   </div>
+                                   <div *ngIf="item.CurrentStage == stages.Stage5">
+                                       {{item.Stage5SubmissionDate | date: 'dd-MM-yyyy'}}
+                                   </div>
+                               </td>
+                               <td>{{item.ActionHolder}}</td>
+                       </tbody>
+                   </table>
+               </div>
+   
+           </div>
+       </div>
+   </div>
+    
+
+
+ <ng-template #content2 let-c="close" let-d="dismiss">
+ <form [formGroup]="angEmailForm">
+   
+   <div class="modal-header" id="kt_modal_add_user_header">
+       <h2 class="fw-bolder" style="font-size: 1.5rem;">Notification Details</h2>       
+       <div class="btn btn-icon btn-sm btn-active-icon-primary"  (click)="c('Save click')">
+           <span class="svg-icon svg-icon-1">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                   <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+                   <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+               </svg>
+           </span>
+       </div>
+   </div>
+   <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+ 
+       <div class="row">
+           <div class="col-sm-12 col-lg-4 col-lg-4">
+               <div class="form-group">
+                   <label style="width:100%" class="control-label">Entity Code</label>
+                   <input type="text" class="form-control" formControlName="EntityCode" readonly>
+                 </div>               
+             </div>
+             <div class="col-sm-12 col-lg-8 col-lg-8">
+               <div class="form-group">
+                   <label style="width:100%" class="control-label">Entity Name</label>
+                   <input type="text" class="form-control" formControlName="EntityName" readonly>
+                 </div>               
+             </div>
+       </div>
+       <div class="row">
+           <div class="col-sm-12 col-lg-4 col-lg-4">
+               <div class="form-group">
+                   <label style="width:100%" class="control-label">Stage</label>
+                   <input type="text" class="form-control" formControlName="Stage" readonly>
+                 </div>               
+             </div>
+             <div class="col-sm-12 col-lg-4 col-lg-4">
+               <div class="form-group">
+                   <label style="width:100%" class="control-label">Email Type</label>
+                   <input type="text" class="form-control" formControlName="EmailType" readonly>
+                 </div>               
+             </div>
+             <div class="col-sm-12 col-lg-4 col-lg-4">
+               <div class="form-group">
+                   <label style="width:100%" class="control-label">Status</label>
+                   <input type="text" class="form-control" formControlName="Status" readonly>
+                 </div>               
+             </div>
+       </div>
+       <div class="row">
+           <div class="col-sm-12 col-lg-12 col-lg-12">
+               <div class="form-group">
+                   <label style="width:100%" class="control-label">Email To</label>
+                   <input type="text" class="form-control" formControlName="EmailTo" readonly>
+                 </div>               
+             </div>           
+       </div>
+       <div class="row">            
+             <div class="col-sm-12 col-lg-12 col-lg-12">
+               <div class="form-group">
+                   <label style="width:100%" class="control-label">Email CC</label>
+                   <input type="text" class="form-control" formControlName="EmailCC" readonly>
+                 </div>               
+             </div>
+       </div>
+       <div class="row">            
+           <div class="col-sm-12 col-lg-12 col-lg-12">
+             <div class="form-group">
+                 <label style="width:100%" class="control-label">Email Content</label>                  
+                 <!-- <textarea class="form-control" formControlName="EmailContent" name="textarea-input"
+                 rows="6" readonly></textarea> -->
+
+                 <div [innerHTML]="emailHtmlStr"></div>
+                
+               </div>               
+           </div>
+     </div>
+       
+   </div>         
+                  
+  
+ 
+   <div class="modal-footer">        
+      
+       <button type="button" class="btn btn-success" (click)="c('Save click')">Close</button>
+   </div>
+ 
+ </form>
+ </ng-template>
+ 
